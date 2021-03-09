@@ -1,5 +1,7 @@
 ﻿namespace T {
+
     public class Singleton<T> where T : new() {
+        
         protected static T _ins;
         public static T Ins {
             get {
