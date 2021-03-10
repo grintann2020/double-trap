@@ -1,6 +1,6 @@
 namespace T {
 
-    public interface IUI : IUI {
+    public interface IUI {
 
         void Bind(UIMgr mgr);
         void Init();

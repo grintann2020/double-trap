@@ -1,6 +1,9 @@
+
 namespace T {
 
-    public class UI : Monobehavior {
+    public class UI {
+
+        private UIMgr _mgr;
 
         void Bind(UIMgr mgr) {
 

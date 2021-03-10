@@ -17,8 +17,8 @@ namespace T {
         private MenuPgm _menuPgm = new MenuPgm(); // 啟動程序
 
         public void Init() {
-            Register(EPgm.Init, _initPgm);
-            Register(EPgm.Menu, _menuPgm);
+            Reg(EPgm.Init, _initPgm);
+            Reg(EPgm.Menu, _menuPgm);
             Link(_initPgm, _menuPgm);
             Link(_menuPgm, null);
         }
@@ -29,7 +29,7 @@ namespace T {
             }
         }
 
-        public void Register(EPgm ePgm, IPgm iPgm) {
+        public void Reg(EPgm ePgm, IPgm iPgm) {
             _pgmDic.Add(ePgm, iPgm);
             iPgm.Bind(this);
         }
@@ -40,12 +40,12 @@ namespace T {
 
         public void ExePgm(EPgm ePgm) { // Excute Specific Pgm By Enum 
             _currPgm = _pgmDic[ePgm];
-            ExePgm(_currPgm);
+            Exe(_currPgm);
         }
 
         public void ExePgm(IPgm iPgm) { // Excute Specific Pgm
             _currPgm = iPgm;
-            ExePgm(_currPgm);
+            Exe(_currPgm);
         }
 
         public void Exe(IPgm iPgm) {
