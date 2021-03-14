@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dc3181ff7d5aec47988f5b89b752bae, type: 3}
-  m_Name: 1920_1080
+  m_Script: {fileID: 11500000, guid: 89b8a79503dabcc49b450396ae886081, type: 3}
+  m_Name: 16_9
   m_EditorClassIdentifier: 
-  Long: 1920
-  Short: 1080
+  Long: 16
+  Short: 9

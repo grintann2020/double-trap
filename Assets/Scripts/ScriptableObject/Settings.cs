@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
 namespace T {
+    
     [CreateAssetMenu(fileName = "Settings", menuName = "ScriptableObject/Settings", order = 0)]
-    public class SettingsSO : ScriptableObject {
-        public ScrRezSO[] ScrRezArr;
+    public class Settings : ScriptableObject {
+
+        public ScrRez ScrRez;
 
         
     }

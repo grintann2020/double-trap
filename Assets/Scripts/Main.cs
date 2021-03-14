@@ -4,7 +4,7 @@ namespace T {
 
     public class Main : MonoBehaviour {
 
-        [SerializeField] private SettingsSO _settings;
+        [SerializeField] private Settings _settings;
 
         void Awake() {
             Debug.Log(GameMgr.Ins);

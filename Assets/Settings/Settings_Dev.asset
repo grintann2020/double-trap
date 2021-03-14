@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39086e84f77d664fa6cbe55c0a688c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 12d4498480766314d9b658e207c7b862, type: 3}
   m_Name: Settings_Dev
   m_EditorClassIdentifier: 
-  ScrRezArr:
-  - {fileID: 11400000, guid: 8ca58cfb0c72f6d46a9117806615e6e9, type: 2}
-  - {fileID: 11400000, guid: fea8166f8441eae4db8fa8ccac4cb5c4, type: 2}
-  - {fileID: 11400000, guid: cb7d8c42db4a24a49bb06789ce55d6d0, type: 2}
-  - {fileID: 11400000, guid: 88af693d72ff7bc458b290a25af82906, type: 2}
-  - {fileID: 11400000, guid: 23dc835a2ef52b24a8ee6f927b4ff36d, type: 2}
+  ScrRez: {fileID: 11400000, guid: bd5d6a6a7a903104cad362d84f702797, type: 2}
