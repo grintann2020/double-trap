@@ -20,9 +20,7 @@ namespace T {
         }
 
         public int Wd { // width
-            get {
-                return (int)Math.Round((Screen.width * Max - Screen.width * Min) / NumOfLv * Lv + Screen.width * Min);
-            }
+            get { return (int)Math.Round((Screen.width * Max - Screen.width * Min) / NumOfLv * Lv + Screen.width * Min); }
         }
 
         public int Ht { // height
