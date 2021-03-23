@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using DT;
-using Robot;
 
 namespace T {
     
@@ -10,15 +8,13 @@ namespace T {
         public EGame EGame;
         public ScrRez ScrRez;
 
-        public IPgmGrp IPgmGrp {
+        public IPrime IPrime {
             get {
                 switch (EGame) {
-                    case EGame.DoubleTrap:
-                        return new DT.PgmGrp();
-                    case EGame.Robot:
-                        return new Robot.PgmGrp();
+                    case EGame.DT:
+                        return new DTPrime();
                     default:
-                        return new DT.PgmGrp();
+                        return new DTPrime();
                 }
             }
         }

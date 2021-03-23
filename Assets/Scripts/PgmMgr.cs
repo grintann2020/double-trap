@@ -4,19 +4,19 @@ namespace T {
 
     public class PgmMgr : Singleton<PgmMgr> {
         
+        private IPgmPrime _iPgmPrime;
         private Dictionary<byte, IPgm> _pgmDic;
         private IPgm _currPgm;
-        private IPgmGrp _iPgmGrp;
-
-        public void Bind(IPgmGrp iPgmGrp) {
-            _iPgmGrp = iPgmGrp;
-            _iPgmGrp.Mgr = this;
+        
+        public void Bind(IPgmPrime iPgmPrime) {
+            _iPgmPrime = iPgmPrime;
+            _iPgmPrime.Mgr = this;
         }
 
         public void Init() {
             _pgmDic = new Dictionary<byte, IPgm>();
             _currPgm = null;
-            _iPgmGrp.Init();
+            _iPgmPrime.Init();
         }
 
         public void InvokeUpd() {

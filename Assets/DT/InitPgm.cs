@@ -16,13 +16,13 @@ namespace DT {
             InteractMgr.Ins.Init();
             StgMgr.Ins.Init();
             
-            Debug.Log("init program --> executed");
+            Debug.Log("Robot) init program --> executed");
 
             PgmMgr.Ins.Next();
         }
 
         public void End() {
-            Debug.Log("init program --> end");
+            Debug.Log("Robot) init program --> end");
         }
     }
 }

@@ -11,7 +11,8 @@ namespace T {
         public void Bind(Settings settings) {
             _settings = settings;
             _scrRez = settings.ScrRez;
-            PgmMgr.Ins.Bind(_settings.IPgmGrp);
+            PgmMgr.Ins.Bind(_settings.IPrime.IPgmPrime);
+            // PgmMgr.Ins.Bind(_settings.IPgmGrp);
         }
 
         public void Begin() {

@@ -1,6 +1,6 @@
 ﻿namespace T {
 
-    public interface IPgmGrp {
+    public interface IPgmPrime {
 
         PgmMgr Mgr { set; }
         void Init();

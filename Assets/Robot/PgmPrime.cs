@@ -2,7 +2,7 @@
 
 namespace Robot {
 
-    public class PgmGrp : IPgmGrp {
+    public class PgmPrime : IPgmPrime {
 
         public PgmMgr Mgr { private get; set; }
         private InitPgm _initPgm = new InitPgm(); // Initialize Program
@@ -14,7 +14,7 @@ namespace Robot {
             Mgr.Link(_initPgm, _launchPgm);
             Mgr.Link(_launchPgm, null);
             
-            // Mgr.Exe(EPgm.Init);
+            Mgr.Exe((byte)EPgm.Init);
         }
     }
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d4498480766314d9b658e207c7b862, type: 3}
   m_Name: Settings_DT
   m_EditorClassIdentifier: 
-  EGame: 0
+  EGame: 1
   ScrRez: {fileID: 11400000, guid: 81a2ecf3ef260224cbd666130f36a8c5, type: 2}

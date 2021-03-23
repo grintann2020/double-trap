@@ -4,7 +4,7 @@ using T;
 
 namespace DT {
 
-    public class PgmGrp : IPgmGrp {
+    public class PgmPrime : IPgmPrime {
 
         public PgmMgr Mgr { private get; set; }
         private InitPgm _initPgm = new InitPgm(); // Initialize Program
