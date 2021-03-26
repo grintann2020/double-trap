@@ -9,27 +9,17 @@ namespace Robot {
 
     public class PgmPrime : IPgmPrime {
 
-        // public PgmMgr Mgr { private get; set; }
-        public IPgm[] IArr { get { return _iArr; } }
-        private IPgm[] _iArr;
-
+        public IPgm[] IPgmArr { get { return _iPgmArr; } }
+        private IPgm[] _iPgmArr = new IPgm[Enum.GetNames(typeof(EPgm)).Length];
+        // program objects
         private InitPgm _initPgm = new InitPgm(); // Initialize Program
         private LaunchPgm _launchPgm = new LaunchPgm(); // Launch Program
 
-        public void Init() {
-            _iArr = new IPgm[Enum.GetNames(typeof(EPgm)).Length];
-            _iArr[(byte)EPgm.Init] = _initPgm;
-            _iArr[(byte)EPgm.Launch] = _launchPgm;
-            
+        public PgmPrime() {
+            _iPgmArr[(byte)EPgm.Init] = _initPgm;
+            _iPgmArr[(byte)EPgm.Launch] = _launchPgm;
+            // link settings
             _initPgm.Next = _launchPgm;
-
-        //     Mgr.Reg(new IPgm[] {
-        //         _initPgm, _launchPgm
-        //     });
-        //     Mgr.Link(_initPgm, _launchPgm);
-        //     Mgr.Link(_launchPgm, null);
-            
-        //     Mgr.Exe((byte)EPgm.Init);
-        // }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace T {
     
@@ -7,16 +8,10 @@ namespace T {
 
         public EGame EGame;
         public ScrRez ScrRez;
+        // private PrimeMgr _primeMgr = new PrimeMgr();
 
-        public IPrime IPrime {
-            get {
-                switch (EGame) {
-                    case EGame.DT:
-                        return new DTPrime();
-                    default:
-                        return new DTPrime();
-                }
-            }
-        }
+        // public IPrime IPrime {
+        //     get { return _primeMgr.Fetch(EGame); }
+        // }
     }
 }
