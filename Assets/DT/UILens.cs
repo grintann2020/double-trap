@@ -2,7 +2,7 @@ using T;
 
 namespace DT {
 
-    public class MenuCam : Cam, ICam {
+    public class UILens : Lens, ILens {
 
         
     }

@@ -7,10 +7,10 @@ namespace T {
 
         private Camera _mainCam;
         private List<Camera> _camLis;
-        private ICam[] _iCamArr;
+        private ILens[] _iLensArr;
 
         public void Bind(ICamPrime iCamPrime) {
-            _iCamArr = iCamPrime.ICamArr;
+            _iLensArr = iCamPrime.ILensArr;
         }
 
         public void Init() {

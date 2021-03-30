@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace T {
 
-    public class Cam {
+    public class Lens {
 
         public SOrientC3 DefOrient {
             get { return _defOrient; }
@@ -12,8 +12,8 @@ namespace T {
         private SOrientC3 _defOrient;
         // private List<SOrientC3> _orientLis;
 
-        public Cam() {
-            Debug.Log("Cam Cam Cam");
+        public Lens() {
+            Debug.Log("Lens Lens Lens");
             // _orientLis = new List<SOrientC3>();
         }
     }

@@ -3,21 +3,21 @@ using T;
 
 namespace DT {
 
-    public enum ECam : byte {
-        Menu, Stg
+    public enum ELens : byte {
+        UI, Play
     }
 
     public class CamPrime : ICamPrime {
 
-        public ICam[] ICamArr { get { return _iCamArr; } }
-        private ICam[] _iCamArr = new ICam[Enum.GetNames(typeof(ECam)).Length];
+        public ILens[] ILensArr { get { return _iLensArr; } }
+        private ILens[] _iLensArr = new ILens[Enum.GetNames(typeof(ELens)).Length];
         // camera objects
-        private MenuCam _menuCam = new MenuCam(); // Menu Camera
-        private StgCam _stgCam = new StgCam(); // Stage Camera
+        private UILens _uiLens = new UILens(); // Menu Camera
+        private PlayLens _playLens = new PlayLens(); // Stage Camera
 
         public CamPrime() {
-            _iCamArr[(byte)ECam.Menu] = _menuCam;
-            _iCamArr[(byte)ECam.Stg] = _stgCam;
+            _iLensArr[(byte)ELens.UI] = _uiLens;
+            _iLensArr[(byte)ELens.Play] = _playLens;
         }
     }
 }
