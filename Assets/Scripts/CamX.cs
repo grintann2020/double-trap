@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace T {
 
-    public class Lens {
+    public class CamX {
 
         public SOrientC3 DefOrient {
             get { return _defOrient; }
@@ -12,7 +12,7 @@ namespace T {
         private SOrientC3 _defOrient;
         // private List<SOrientC3> _orientLis;
 
-        public Lens() {
+        public CamX() {
             Debug.Log("Lens Lens Lens");
             // _orientLis = new List<SOrientC3>();
         }

@@ -3,21 +3,22 @@ using UnityEngine;
 
 namespace T {
 
-    public class CamMgr : Singleton<CamMgr> {
+    public class ViewMgr : Singleton<ViewMgr> {
 
-        private Camera _mainCam;
+        // private Camera _mainCam;
         private List<Camera> _camLis;
-        private ILens[] _iLensArr;
+        private SCamProj[] _sCamProjArr;
 
-        public void Bind(ICamPrime iCamPrime) {
-            _iLensArr = iCamPrime.ILensArr;
+        public void Bind(IViewPrime iViewPrime) {
+            _sCamProjArr = iViewPrime.SCamProjArr;
         }
 
         public void Init() {
-            _camLis.Clear();
+            // _camLis.Clear();
             _camLis = new List<Camera>();
-            _mainCam = Camera.main;
-            _camLis.Add(_mainCam);
+            _camLis.Add(Camera.main);
+            // _mainCam = Camera.main;
+            
             // _iCamArr[(byte)ECam.Stg]
         }
 

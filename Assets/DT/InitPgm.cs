@@ -13,12 +13,12 @@ namespace DT {
 
         public void Exe() {
             LangMgr.Ins.Init();
-            CamMgr.Ins.Init();
+            ViewMgr.Ins.Init();
             UIMgr.Ins.Init();
             InteractMgr.Ins.Init();
             StgMgr.Ins.Init();
 
-            CamMgr.Ins.Create();
+            ViewMgr.Ins.Create();
             
             Debug.Log("DT) init program --> executed");
             Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Four));
