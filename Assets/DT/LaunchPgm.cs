@@ -6,7 +6,7 @@ namespace DT {
 
         public IPgm Next { get; set; }
 
-        public void InvokeUpd() {
+        public void InvkUpd() {
 
         }
 

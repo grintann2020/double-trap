@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace T {
 
@@ -16,17 +15,13 @@ namespace T {
             _iCurrPgm = null;
         }
 
-        public void InvokeUpd() {
+        public void InvkUpd() {
             if (_iCurrPgm != null) {
-                _iCurrPgm.InvokeUpd();
+                _iCurrPgm.InvkUpd();
             }
         }
 
         public void Exe(byte ePgm) { // excute specific program by Enum
-            if (Array.IndexOf(_iPgmArr, ePgm) == -1) {
-                Debug.LogError("PgmMgr Exe( ) -- (byte)ePgm = " + ePgm + " is not included");
-                return;
-            }
             if (_iCurrPgm != null) {
                 if (_iPgmArr[ePgm] == _iCurrPgm) {
                     return;
@@ -34,17 +29,6 @@ namespace T {
                 _iCurrPgm.End();
             }
             _iCurrPgm = _iPgmArr[ePgm];
-            _iCurrPgm.Exe();
-        }
-
-        public void Exe(IPgm iPgm) { // excute specific program by interface
-            if (_iCurrPgm != null) {
-                if (iPgm == _iCurrPgm) {
-                    return;
-                }
-                _iCurrPgm.End();
-            }
-            _iCurrPgm = iPgm;
             _iCurrPgm.Exe();
         }
 

@@ -3,7 +3,7 @@
     public interface IPgm {
 
         IPgm Next { get; set; }
-        void InvokeUpd();
+        void InvkUpd();
         void Exe();
         void End();
     }

@@ -5,6 +5,6 @@ namespace T {
         void Bind(UIMgr mgr);
         void Init();
         void Clear();
-        void InvokeUpd();
+        void InvkUpd();
     }
 }

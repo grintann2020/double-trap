@@ -28,7 +28,7 @@ namespace T {
         }
 
         private void Update() {
-            GameMgr.Ins.InvokeUpd();
+            GameMgr.Ins.InvkUpd();
         }
 
         // For Test

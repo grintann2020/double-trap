@@ -11,7 +11,7 @@ namespace DT {
 
         public IPgm[] IPgmArr { get { return _iPgmArr; } }
         private IPgm[] _iPgmArr = new IPgm[Enum.GetNames(typeof(EPgm)).Length];
-        // program objects
+
         private InitPgm _initPgm = new InitPgm(); // Initialize Program
         private LaunchPgm _launchPgm = new LaunchPgm(); // Launch Program
         private MenuPgm _menuPgm = new MenuPgm(); // Menu Program
@@ -24,7 +24,7 @@ namespace DT {
             _iPgmArr[(byte)EPgm.Menu] = _menuPgm;
             _iPgmArr[(byte)EPgm.Stg] = _stgPgm;
             _iPgmArr[(byte)EPgm.Map] = _mapPgm;
-            // link settings
+
             _initPgm.Next = _launchPgm;
             _launchPgm.Next = _menuPgm;
             _menuPgm.Next = null;

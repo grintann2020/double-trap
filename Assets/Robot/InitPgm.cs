@@ -7,7 +7,7 @@ namespace Robot {
 
         public IPgm Next { get; set; }
 
-        public void InvokeUpd() {
+        public void InvkUpd() {
 
         }
 

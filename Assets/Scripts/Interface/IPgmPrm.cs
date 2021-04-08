@@ -1,4 +1,6 @@
-﻿namespace T {
+﻿using System;
+
+namespace T {
 
     public interface IPgmPrm {
 

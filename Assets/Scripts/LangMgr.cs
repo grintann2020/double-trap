@@ -33,7 +33,7 @@ namespace T {
             ELang.ZH_CN, /* ChineseSimplified = 40 */ ELang.ZH_TW, /* ChineseTraditional = 41 */
             ELang.EN, /* Unknow = 42 */
         };
-        private List<Text> _txtLis;
+        private List<Text> _txtLst;
 
         public void Bind(ILangPrm iLangPrm) {
             _langArr = iLangPrm.LangArr;
@@ -48,10 +48,6 @@ namespace T {
             if ((ELang)eLang == _eCurrLang) {
                 return;
             }
-            if (Array.IndexOf(_langArr, (ELang)eLang) == -1) {
-                Debug.LogError("LangMgr Chg( ) -- " + (ELang)eLang + " is not included");
-                return;
-            }
             _eCurrLang = (ELang)eLang;
         }
 
@@ -59,19 +55,11 @@ namespace T {
             if (eLang == _eCurrLang) {
                 return;
             }
-            if (Array.IndexOf(_langArr, eLang) == -1) {
-                Debug.LogError("LangMgr Chg( ) -- " + eLang + " is not included");
-                return;
-            }
             _eCurrLang = eLang;
         }
 
         public void Chg(SystemLanguage sysLang) {
             if (_sysLangArr[(byte)sysLang] == _eCurrLang) {
-                return;
-            }
-            if (Array.IndexOf(_langArr, _sysLangArr[(byte)sysLang]) == -1) {
-                Debug.LogError("LangMgr Chg( ) -- " + _sysLangArr[(byte)sysLang] + " is not included");
                 return;
             }
             _eCurrLang = _sysLangArr[(byte)sysLang];

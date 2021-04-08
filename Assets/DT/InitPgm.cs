@@ -7,18 +7,19 @@ namespace DT {
 
         public IPgm Next { get; set; }
 
-        public void InvokeUpd() {
+        public void InvkUpd() {
 
         }
 
         public void Exe() {
+            
             LangMgr.Ins.Init();
             VwMgr.Ins.Init();
             UIMgr.Ins.Init();
             InteractMgr.Ins.Init();
             StgMgr.Ins.Init();
 
-            // VwMgr.Ins.Create();
+            VwMgr.Ins.SetCam((byte)EVw.Menu, Camera.main);
 
             // Debug.Log("DT) init program --> executed");
             // LangMgr.Ins.Chg(ELang.ZH_CN);

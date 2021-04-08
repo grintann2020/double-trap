@@ -23,8 +23,8 @@ namespace T {
             SetRez(2);
         }
 
-        public void InvokeUpd() {
-            PgmMgr.Ins.InvokeUpd();
+        public void InvkUpd() {
+            PgmMgr.Ins.InvkUpd();
         }
 
         public void SetRez() {

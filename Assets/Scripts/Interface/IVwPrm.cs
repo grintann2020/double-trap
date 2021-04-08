@@ -4,7 +4,7 @@ namespace T {
 
     public interface IVwPrm {
 
-        SCamProj[] SCamProjArr { get; }
+        SCamPrj[] SCamPrjArr { get; }
         IVw[] IVwArr { get; }
     }
 }

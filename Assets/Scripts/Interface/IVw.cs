@@ -4,8 +4,11 @@ using UnityEngine;
 namespace T {
 
     public interface IVw {
-
+        
+        
         void SetCam(Camera cam);
-        void SetCamProj(SCamProj sCamProj);
+        void SetCamPrj(SCamPrj sCamPrj);
+        void Enbl();
+        void Dsbl();
     }
 }

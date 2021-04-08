@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 namespace T {
 
-    public struct SCamProj {
+    public struct SCamPrj {
 
         public bool OP; // orthographic - Is the camera orthographic (true) or perspective (false)?
         public float OPSize;  // orthographicSize - Camera's half-size when in orthographic mode.
@@ -13,7 +13,7 @@ namespace T {
         public float Far; // farClipPlane - The distance of the far clipping plane from the Camera, in world units.
         // public bool FOVAxis; // FieldOfViewAxis
 
-        public SCamProj(bool op, float opSize, float fov, bool phyCam, float near, float far /*, bool fovAxis */) {
+        public SCamPrj(bool op, float opSize, float fov, bool phyCam, float near, float far /*, bool fovAxis */) {
             OP = op;
             OPSize =  op ? opSize : float.NaN;
             FOV = op ? float.NaN : fov;
