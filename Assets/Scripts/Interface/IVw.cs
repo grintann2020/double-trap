@@ -11,8 +11,5 @@ namespace T {
 
         // extends
         void InvkUpd();
-
-        // void Enbl();
-        // void Dsbl();
     }
 }

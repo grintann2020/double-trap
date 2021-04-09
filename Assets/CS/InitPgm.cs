@@ -1,7 +1,7 @@
 using UnityEngine;
 using T;
 
-namespace Robot {
+namespace CS {
 
     public class InitPgm : IPgm {
 
@@ -13,7 +13,7 @@ namespace Robot {
 
         public void Exe() {
             UIMgr.Ins.Init();
-            InteractMgr.Ins.Init();
+            IaMgr.Ins.Init();
             StgMgr.Ins.Init();
             
             Debug.Log("Robot) init program --> executed");

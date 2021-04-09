@@ -1,6 +1,6 @@
 using T;
 
-namespace Robot {
+namespace CS {
 
     public class LaunchPgm : IPgm {
 

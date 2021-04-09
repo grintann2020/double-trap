@@ -13,6 +13,7 @@ namespace DT {
         }
 
         public PlayVw() {
+            _defOrnt = new SOrntC3(new SCoord3(12.0f, 13.0f, 15.0f), new SCoord3(0.0f, 0.0f, 0.0f));
             _dActArr[(byte)EAct.P1] = P1;
             _dActArr[(byte)EAct.P2] = P2;
         }

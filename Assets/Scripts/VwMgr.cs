@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace T {
@@ -14,7 +13,7 @@ namespace T {
         }
 
         public void Init() {
-            // _iCurrVw = null;
+
         }
 
         public void SetCam(byte eVw, Camera cam) {

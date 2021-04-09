@@ -2,7 +2,7 @@
 using UnityEngine;
 using T;
 
-namespace Robot {
+namespace CS {
 
     public enum ETerm : ushort {
         GrinBit,

@@ -8,7 +8,7 @@ namespace T {
 
         public PrmMgr() {
             _iPrmArr[(byte)EGame.DT] = new DT.Prm();
-            _iPrmArr[(byte)EGame.Robot] = new Robot.Prm();
+            _iPrmArr[(byte)EGame.CS] = new CS.Prm();
         }
 
         public void Bind(EGame eGame) {

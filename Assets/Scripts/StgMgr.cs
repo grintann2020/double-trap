@@ -1,17 +1,27 @@
-﻿using System.Collections.Generic;
-
-namespace T {
+﻿namespace T {
 
     public class StgMgr : Singleton<StgMgr> {
 
-        Dictionary<EStg, IStg> _stgDic = new Dictionary<EStg, IStg>();
+        private IStg[] _iStgArr;
+        private IStg _iCurrStg;
 
-        public void Init() {
-
+        public void Bind(IStgPrm iStgPrm) {
+            _iStgArr = iStgPrm.IStgArr;
         }
 
-        public void Reg(EStg eStg, IStg iStg) {
-            _stgDic.Add(eStg, iStg);
+        public void Init() {
+            _iCurrStg = null;
+        }
+
+        public void Imp(byte eStg) { // excute specific program by Enum
+            if (_iCurrStg != null) {
+                if (_iStgArr[eStg] == _iCurrStg) {
+                    return;
+                }
+                _iCurrStg.Clr();
+            }
+            _iCurrStg = _iStgArr[eStg];
+            _iCurrStg.Imp();
         }
     }
 }

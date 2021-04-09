@@ -2,10 +2,10 @@ namespace T {
 
     public interface IStg {
 
-        void Init();
-        void Begin();
+        void Imp();
+        void Beg();
         void Play();
         void End();
-        void Clear();
+        void Clr();
     }
 }

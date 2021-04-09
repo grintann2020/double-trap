@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 
 namespace T {
-    
-    public enum EUI {
-        Menu, 
-    }
 
     public class UIMgr : Singleton<UIMgr> {
 
-        private Dictionary<EUI, IUI> _uiDic = new Dictionary<EUI, IUI>();
+        private IUI[] _iUIArr;
+
+        public void Bind(IUIPrm iUIPrm) {
+            _iUIArr = iUIPrm.IUIArr;
+        }
 
         public void Init() {
             

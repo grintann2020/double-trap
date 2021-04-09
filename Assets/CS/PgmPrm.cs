@@ -1,7 +1,7 @@
 ﻿using System;
 using T;
 
-namespace Robot {
+namespace CS {
 
     public enum EPgm : byte {
         Init, Launch
