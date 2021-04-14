@@ -1,4 +1,3 @@
-using UnityEngine;
 using T;
 
 namespace DT {
@@ -7,22 +6,20 @@ namespace DT {
         N, E, W, S, NW, NE, SW, SE,
     }
 
-    public class SquSpc<T> : ISpc<T> {
+    public class SquSpc : Spc, ISpc {
 
         private SquCalc _calc;
-        private byte _uWd; // unit width
 
         public SquSpc(SquCalc calc, byte uWd) {
             _calc = calc;
             _uWd = uWd;
         }
 
-        public T[][] Abstr(ushort[][] blkArr) {
-            Debug.Log("SquSpc -- Abstr( )");
+        public IBlk[][] Abstr(ushort[][] blkArr) {
             ushort rows = (ushort)blkArr.GetLength(0);
             ushort cols = (ushort)blkArr.GetLength(1);
-            T[][] squArr = new T[rows][];
-            return squArr;
+            _iBlkArr = new SquBlk[rows][];
+            return _iBlkArr;
             // SCoord2 startPos = _calc.GetCntr(cols, rows, colSpacing, rowSpacing);
         }
     }

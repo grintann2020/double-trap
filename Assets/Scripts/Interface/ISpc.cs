@@ -1,7 +1,7 @@
 namespace T {
 
-    public interface ISpc<T> {
+    public interface ISpc {
 
-        T[][] Abstr(ushort[][] blkArr);
+        IBlk[][] Abstr(ushort[][] objArr);
     }
 }
