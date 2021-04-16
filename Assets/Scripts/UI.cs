@@ -1,11 +1,10 @@
-
 namespace T {
 
     public class UI {
 
         private UIMgr _mgr;
 
-        void Bind(UIMgr mgr) {
+        public void Bind(UIMgr mgr) {
 
         }
 

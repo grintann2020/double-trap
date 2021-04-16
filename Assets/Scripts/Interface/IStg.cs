@@ -3,9 +3,9 @@ namespace T {
     public interface IStg {
 
         void Imp();
-        void Beg();
+        // void Beg();
         void Play();
-        void End();
+        // void End();
         void Clr();
     }
 }
