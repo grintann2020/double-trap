@@ -1,6 +1,6 @@
 namespace T {
 
-    public class IaMgr : Singleton<IaMgr> {
+    public class IaMgr : Sgltn<IaMgr> {
 
         private IIa[] _iIaArr;
 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace T {
 
-    public class VwMgr : Singleton<VwMgr> {
+    public class VwMgr : Sgltn<VwMgr> {
 
         private SCamPrj[] _sPrjArr;
         private IVw[] _iVwArr;

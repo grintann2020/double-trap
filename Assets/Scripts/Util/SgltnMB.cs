@@ -2,7 +2,7 @@
 
 namespace T {
 
-    public class SingletonMB<T> : MonoBehaviour where T : MonoBehaviour { // Singleton base class.
+    public class SgltnMB<T> : MonoBehaviour where T : MonoBehaviour { // Singleton base class.
                                                                           // Derive this class to make it Singleton
             protected static T _ins;
             public static T Ins {

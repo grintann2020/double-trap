@@ -4,7 +4,7 @@ using T;
 
 namespace DT {
 
-    public class MenuVw : Vw, IVw {
+    public class FstVw : Vw, IVw {
 
         public enum EAct {
             Test, GG, ok
@@ -12,7 +12,7 @@ namespace DT {
 
         private _dAct[] _dActArr = new _dAct[Enum.GetNames(typeof(EAct)).Length];
 
-        public MenuVw(SCamPrj defProj, SOrnt3 defOrnt) : base(defProj, defOrnt) {
+        public FstVw(SCamPrj defProj, SOrnt3 defOrnt) : base(defProj, defOrnt) {
             _dActArr[(byte)EAct.Test] = Test;
             _dActArr[(byte)EAct.GG] = GG;
         }
@@ -26,11 +26,11 @@ namespace DT {
         }
 
         public void Test() {
-            Debug.Log("MenuVw -- Test()");
+            Debug.Log("FstVw -- Test()");
         }
 
         public void GG() {
-            Debug.Log("MenuVw -- GG()");
+            Debug.Log("FstVw -- GG()");
         }
     }
 }

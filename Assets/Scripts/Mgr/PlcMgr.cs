@@ -1,6 +1,6 @@
 namespace T {
 
-    public class PlcMgr : Singleton<PlcMgr> {
+    public class PlcMgr : Sgltn<PlcMgr> {
 
         private IPlc[] _iPlcArr;
         private IPlc _iCurrPlc;

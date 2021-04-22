@@ -13,8 +13,8 @@ namespace DT {
         private IPgm[] _iPgmArr = new IPgm[Enum.GetNames(typeof(EPgm)).Length];
 
         private InitPgm _initPgm = new InitPgm(); // Initialize Program
-        private LaunchPgm _launchPgm = new LaunchPgm(); // Launch Program
-        private MenuPgm _menuPgm = new MenuPgm(); // Menu Program
+        private LnchPgm _launchPgm = new LnchPgm(); // Launch Program
+        private FstPgm _menuPgm = new FstPgm(); // Menu Program
         private StgPgm _stgPgm = new StgPgm(); // Stage Program
         private MapPgm _mapPgm = new MapPgm(); // Map Program
 

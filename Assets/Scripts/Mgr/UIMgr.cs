@@ -1,6 +1,6 @@
 namespace T {
 
-    public class UIMgr : Singleton<UIMgr> {
+    public class UIMgr : Sgltn<UIMgr> {
 
         private IUI[] _iUIArr;
 
@@ -9,7 +9,19 @@ namespace T {
         }
 
         public void Init() {
-            
+
+        }
+
+        public IUI GetUI(byte eUI) {
+            return _iUIArr[eUI];
+        }
+
+        public void Instl(byte eUI) {
+            _iUIArr[eUI].Instl();
+        }
+
+        public void Unstl(byte eUI) {
+            _iUIArr[eUI].Unstl();
         }
     }
 }

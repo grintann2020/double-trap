@@ -2,7 +2,7 @@ using System;
 
 namespace T {
 
-    public class PrmMgr : Singleton<PrmMgr> {
+    public class PrmMgr : Sgltn<PrmMgr> {
 
         private IPrm[] _iPrmArr = new IPrm[Enum.GetNames(typeof(EGame)).Length];
 

@@ -30,7 +30,7 @@ namespace DT {
         private static SOrnt3 _play1Ornt = new SOrnt3(new SCoord3(10.0f, 10.0f, 10.0f), new SCoord3(0.0f, 0.0f, 0.0f));
         private static SOrnt3 _play2Ornt = new SOrnt3(new SCoord3(10.0f, 10.0f, 10.0f), new SCoord3(0.0f, 0.0f, 0.0f));
         private static SOrnt3 _play3Ornt = new SOrnt3(new SCoord3(10.0f, 10.0f, 10.0f), new SCoord3(0.0f, 0.0f, 0.0f));
-        private MenuVw _menuVw = new MenuVw(_menuPrj, _menuOrnt);
+        private FstVw _menuVw = new FstVw(_menuPrj, _menuOrnt);
         private PlayVw _playVw = new PlayVw(_playPrj, _play0Ornt);
 
         public VwPrm() {

@@ -2,7 +2,7 @@ using T;
 
 namespace DT {
 
-    public class LaunchPgm : IPgm {
+    public class FstPgm : IPgm {
 
         public IPgm Next { get; set; }
 

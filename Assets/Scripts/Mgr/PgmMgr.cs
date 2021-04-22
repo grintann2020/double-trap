@@ -1,6 +1,6 @@
 ﻿namespace T {
 
-    public class PgmMgr : Singleton<PgmMgr> {
+    public class PgmMgr : Sgltn<PgmMgr> {
 
         private IPgm[] _iPgmArr;
         private IPgm _iCurrPgm;

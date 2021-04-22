@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace T {
 
-    public class LangMgr : Singleton<LangMgr> {
+    public class LangMgr : Sgltn<LangMgr> {
 
         private object[][][] _termArr;
         private ELang _eCurrLang;

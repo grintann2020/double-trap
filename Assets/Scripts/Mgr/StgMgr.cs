@@ -1,6 +1,6 @@
 ﻿namespace T {
 
-    public class StgMgr : Singleton<StgMgr> {
+    public class StgMgr : Sgltn<StgMgr> {
 
         private IStg[] _iStgArr;
         private IStg _iCurrStg;

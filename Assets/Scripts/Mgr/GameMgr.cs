@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace T {
 
-    public class GameMgr : Singleton<GameMgr> {
+    public class GameMgr : Sgltn<GameMgr> {
 
         private Settings _settings;
         private ScrRez _scrRez;

@@ -2,7 +2,7 @@
 
 namespace T {
 
-    public class Main : SingletonMB<Main> {
+    public class Main : SgltnMB<Main> {
 
         [SerializeField] private Settings _settings;
 
