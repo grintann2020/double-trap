@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 4264490516278968058}
   - component: {fileID: 4264490516278968057}
   m_Layer: 5
-  m_Name: SplshUI1
+  m_Name: SplhUIA1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,4 +351,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BtnA
+  m_Text: BtnA1

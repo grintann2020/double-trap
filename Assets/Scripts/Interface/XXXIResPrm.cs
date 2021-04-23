@@ -1,6 +1,6 @@
 namespace T {
 
-    public interface IResPrm {
+    public interface XXXIResPrm {
 
         object[][] ResArr { get; }
     }

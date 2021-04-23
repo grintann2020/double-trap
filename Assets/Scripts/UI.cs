@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace T {
@@ -5,46 +6,67 @@ namespace T {
     public class UI {
 
         protected Canvas _canv;
-        protected object[][] _refArr;
-        protected ushort[] _eResArr;
-        protected GameObject[] _goArr;
-        protected object[] _elemArr;
+        protected string[] _keyArr;
+        protected GameObject[] _setArr;
+        protected object[][] _elemArr;
+        // _elemArr[(byte)ERes][0] --> unknown) Component
+        // _elemArr[(byte)ERes][1] --> enum) ERes
+        // _elemArr[(byte)ERes][2] --> string) name of reference GameObject
+        // _elemArr[(byte)ERes][3] --> Type) type of Component
 
         public void SetCanv(Canvas canv) {
             _canv = canv;
         }
 
         public void Instl() {
-            ResMgr.Ins.Load<GameObject>(_eResArr, () => {
-                _goArr = new GameObject[_eResArr.Length];
-                for (byte e = 0; e < _eResArr.Length; e++) {
-                    _goArr[e] = GameObject.Instantiate(ResMgr.Ins.Get<GameObject>(_eResArr[e]), _canv.transform);
+            ResMgr.Ins.Inst(_keyArr, (GameObject[] resArr) => {
+                for (byte r = 0; r < resArr.Length; r++) {
+                    _setArr[r] = resArr[r];
                 }
-                // Debug.Log("1 _eResArr[0] --> " + ResMgr.Ins.Get<GameObject>(_eResArr[0]));
-                // Debug.Log("1 _eResArr[1] --> " + ResMgr.Ins.Get<GameObject>(_eResArr[1]));
-            });
-
-
-            // string[] keyArr = Arr.Dim<string>(_objArr, 0);
-            // ResMgr.Ins.Load<GameObject>(keyArr, (GameObject[] goArr) => {
-            //     for (byte g = 0; g < _objArr.Length; g++) {
-            //         _objArr[g][1] = goArr[g];
-            // Debug.Log("goArr[g] --> " + _objArr[g][1]);
-            // }
-            // });
+                for (byte r = 0; r < _elemArr.Length; r++) {
+                    _elemArr[r][0] = GameObject.Find(_setArr[(byte)_elemArr[r][1]].name + "/" + (string)_elemArr[r][2]).GetComponent((Type)_elemArr[r][3]);
+                }
+            }, _canv.transform);
         }
 
         public void Unstl() {
-            // GameObject[] goArr = Arr.Dim<GameObject>(_objArr, 1);
-            // ResMgr.Ins.Rls<GameObject>(goArr, () => {
-            //     for (byte o = 0; o < _objArr.Length; o++) {
-            //         _objArr[o][1] = null;
-            //     }
-            // });
+            ResMgr.Ins.Rls<GameObject>(_setArr, () => {
+                for (byte r = 0; r < _setArr.Length; r++) {
+                    _setArr[r] = null;
+                }
+                for (byte r = 0; r < _elemArr.Length; r++) {
+                    _elemArr[r][0] = null;
+                    _elemArr[r][1] = null;
+                }
+            });
         }
 
-        public void Rst() {
+        public void Enbl() {
+            for (byte r = 0; r < _setArr.Length; r++) {
+                _setArr[r].SetActive(true);
+            }
+        }
 
+        public void Dsbl() {
+            for (byte r = 0; r < _setArr.Length; r++) {
+                _setArr[r].SetActive(false);
+            }
+        }
+
+        public void EnblSet(byte eSet) {
+            _setArr[eSet].SetActive(true);
+        }
+
+        public void DsblSet(byte eSet) {
+            _setArr[eSet].SetActive(false);
+        }
+
+        public void EnblElem(byte eRef) {
+            ((Component)_elemArr[eRef][0]).gameObject.SetActive(true);
+        }
+
+        public void DsblElem(byte eRef) {
+            ((Component)_elemArr[eRef][0]).gameObject.SetActive(false);
         }
     }
 }

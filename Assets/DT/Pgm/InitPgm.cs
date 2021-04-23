@@ -6,17 +6,24 @@ namespace DT {
 
     public class TestPgm : SgltnMB<TestPgm> {
 
-        public void TestWait(int sec) {
-            StartCoroutine(TestW(sec));
+        public void TestWait(int sec, GameObject[] goArr = null) {
+            if (goArr == null) {
+                StartCoroutine(TestW(sec));
+            } else {
+                StartCoroutine(TestW(sec, goArr));
+            }
         }
 
-        IEnumerator TestW(int sec) {
+        IEnumerator TestW(int sec, GameObject[] goArr = null) {
             yield return new WaitForSeconds(sec);
-
-            // GameObject go = GameObject.Find("SplhUIA1(Clone)");
-            // ResMgr.Ins.Rls<GameObject>(go);
-            // GameObject go2 = GameObject.Find("SplhUIA2(Clone)");
-            // ResMgr.Ins.Rls<GameObject>(go2);
+            // UIMgr.Ins.Unstl((byte)EUI.Splh);
+            // UIMgr.Ins.DsblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnA1);
+            // UIMgr.Ins.DsblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnB2);
+            UIMgr.Ins.DsblSet((byte)EUI.Splh, (byte)SplhUI.ESet.A1);
+            yield return new WaitForSeconds(sec);
+            // UIMgr.Ins.EnblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnA1);
+            // UIMgr.Ins.EnblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnB2);
+            UIMgr.Ins.EnblSet((byte)EUI.Splh, (byte)SplhUI.ESet.A1);
         }
     }
 
@@ -40,18 +47,11 @@ namespace DT {
             // test UIMgr
             UIMgr.Ins.SetCanv((byte)EUI.Splh, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
 
-            // UIMgr.Ins.Instl((byte)EUI.Splh);
+            UIMgr.Ins.Instl((byte)EUI.Splh);
 
-            // TestPgm.Ins.TestWait(3);
+            TestPgm.Ins.TestWait(3);
 
-            // ResMgr.Ins.Inst("SplhUIA1", () => {
-            //     TestPgm.Ins.TestWait(3);
-            // });
-
-            // ResMgr.Ins.Inst((ushort)ERes.SplhUIA2, () => {
-            // }, GameObject.FindGameObjectWithTag("MainCanvas").transform);
-
-            // Test LangMgr
+            // test LangMgr
             LangMgr.Ins.Chg(ELang.ZH_CN);
             // LangMgr.Ins.Chg((byte)ELang.EN_US);
             // Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Three_U));
@@ -60,16 +60,11 @@ namespace DT {
             // LangMgr.Ins.Chg(SystemLanguage.ChineseTraditional);
             // Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Six_U));
 
-            // ResMgr.Ins.Load((byte)ERes.CubeRed);
-            // ResMgr.Ins.Load((byte)ERes.Green);
-
-
-
-            // Test VwMgr
+            // test VwMgr
             VwMgr.Ins.SetCam((byte)EVw.Menu, Camera.main);
             VwMgr.Ins.SetPrj((byte)EVw.Menu, (byte)ECamPrj.Menu);
             // VwMgr.Ins.Act((byte)EVw.Menu, (byte)MenuVw.EAct.Test);
-            // VwMgr.Ins.Act((byte)EVw.Menu, (byte)MenuVw.EAct.GG);
+            VwMgr.Ins.Act((byte)EVw.Menu, (byte)FstVw.EAct.GG);
             // VwMgr.Ins.Act((byte)EVw.Play, (byte)PlayVw.EAct.P1);
             // VwMgr.Ins.Act((byte)EVw.Play, (byte)PlayVw.EAct.P2);
 

@@ -7,17 +7,18 @@ namespace DT {
     //     UI, SplhUI, test1, test2, test3
     // }
 
-    public enum ERes : ushort {
-        CubeRed, SphereRed, CylinderRed,
-        SplhUIA1, SplhUIA2,
-        Red, Green, Blue,
-        BoxRed, BoxGreen, BoxBlue, BoxBlack, BoxWhite,
-    }
+    // public enum ERes : ushort {
+    //     CubeRed, SphereRed, CylinderRed,
+    //     SplhUIA1, SplhUIA2,
+    //     Red, Green, Blue,
+    //     BoxRed, BoxGreen, BoxBlue, BoxBlack, BoxWhite,
+    // }
 
-    public class XXXResPrm : IResPrm {
+    public class XXXResPrm : XXXIResPrm {
 
         public object[][] ResArr { get { return _resArr; } }
-        private object[][] _resArr = new object[Enum.GetNames(typeof(ERes)).Length][];
+        private object[][] _resArr = new object[0][];
+        // private object[][] _resArr = new object[Enum.GetNames(typeof(ERes)).Length][];
 
         public XXXResPrm() {
             // _resArr[(ushort)ERes.SplhUIA1] = new object[] { "SplhUIA1", null };
