@@ -4,6 +4,7 @@ namespace T {
 
     public interface IUI {
 
+        bool IsInstl { get; }
         void SetCanv(Canvas canv);
         void Instl(); // install
         void Unstl(); // uninstall
@@ -13,7 +14,7 @@ namespace T {
         void Dsbl(); // Disable();
         void DsblSet(byte eSet);
         void DsblElem(byte eElem);
-        // void Rst(); // reset
-        // void InvkUpd();
+        // extends
+        void InvkUpd();
     }
 }

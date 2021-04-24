@@ -37,7 +37,7 @@ namespace DT {
         }
 
         public void InvkUpd() {
-
+            Debug.Log("SplhUI -- InvkUpd");
         }
 
         private void BtnA1_Bss() {

@@ -5,12 +5,14 @@ namespace T {
 
     public class UI {
 
+        public bool IsInstl { get { return _isInstl; } }
         protected Canvas _canv;
         protected string[] _keyArr;
         protected GameObject[] _setArr;
         protected object[][] _elemArr;
         protected delegate void _bss();
         protected _bss[] _bssArr;
+        private bool _isInstl = false;
         // _elemArr[(byte)ERes][0] --> unknown) Component
         // _elemArr[(byte)ERes][1] --> enum) ERes
         // _elemArr[(byte)ERes][2] --> string) name of reference GameObject
@@ -33,6 +35,7 @@ namespace T {
                         _bssArr[b].Invoke();
                     }
                 }
+                _isInstl = true;
             }, _canv.transform);
         }
 
@@ -44,6 +47,7 @@ namespace T {
                 for (byte e = 0; e < _elemArr.Length; e++) {
                     _elemArr[e][0] = null;
                 }
+                _isInstl = false;
             });
         }
 

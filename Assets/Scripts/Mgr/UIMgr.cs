@@ -14,6 +14,15 @@ namespace T {
 
         }
 
+        public void InvkUpd() { 
+            // Debug.Log("UIMgr -- InvkUpd");
+            for (byte u = 0; u < _iUIArr.Length; u++) {
+                if (_iUIArr[u].IsInstl) {
+                    _iUIArr[u].InvkUpd();
+                }
+            }
+        }
+
         public void SetCanv(byte eUI, Canvas canv) {
             _iUIArr[eUI].SetCanv(canv);
         }
