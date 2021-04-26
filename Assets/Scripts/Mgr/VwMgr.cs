@@ -24,7 +24,7 @@ namespace T {
             _iVwArr[eVw].SetPrj(_sPrjArr[ePrj]);
         }
 
-        public IVw Get(byte eVw) {
+        public IVw GetVw(byte eVw) {
             return _iVwArr[eVw];
         }
 

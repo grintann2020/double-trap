@@ -47,12 +47,12 @@ namespace T {
             _iUIArr[eUI].Dsbl();
         }
 
-        public void EnblSet(byte eUI, byte eSet) {
-            _iUIArr[eUI].EnblSet(eSet);
+        public void Enbl(byte eUI, byte eSet) {
+            _iUIArr[eUI].Enbl(eSet);
         }
 
-        public void DsblSet(byte eUI, byte eSet) {
-            _iUIArr[eUI].DsblSet(eSet);
+        public void Dsbl(byte eUI, byte eSet) {
+            _iUIArr[eUI].Dsbl(eSet);
         }
 
         public void EnblElem(byte eUI, byte eElem) {
@@ -61,6 +61,22 @@ namespace T {
 
         public void DsblElem(byte eUI, byte eElem) {
             _iUIArr[eUI].DsblElem(eElem);
+        }
+
+        public void Front(byte eUI) {
+            _iUIArr[eUI].Front();
+        }
+
+        public void Front(byte eUI, byte eSet) {
+            _iUIArr[eUI].Front(eSet);
+        }
+
+        public void Back(byte eUI) {
+            _iUIArr[eUI].Back();
+        }
+
+        public void Back(byte eUI, byte eSet) {
+            _iUIArr[eUI].Back(eSet);
         }
     }
 }

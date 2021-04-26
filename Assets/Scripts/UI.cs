@@ -6,13 +6,13 @@ namespace T {
     public class UI {
 
         public bool IsInstl { get { return _isInstl; } }
-        protected Canvas _canv;
         protected string[] _keyArr;
         protected GameObject[] _setArr;
         protected object[][] _elemArr;
         protected delegate void _bss();
         protected _bss[] _bssArr;
-        private bool _isInstl = false;
+        protected Canvas _canv;
+        private bool _isInstl;
         // _elemArr[(byte)ERes][0] --> unknown) Component
         // _elemArr[(byte)ERes][1] --> enum) ERes
         // _elemArr[(byte)ERes][2] --> string) name of reference GameObject
@@ -23,6 +23,9 @@ namespace T {
         }
 
         public void Instl() {
+            if (_isInstl) {
+                return;
+            }
             ResMgr.Ins.Inst(_keyArr, (GameObject[] resArr) => {
                 for (byte r = 0; r < resArr.Length; r++) {
                     _setArr[r] = resArr[r];
@@ -40,6 +43,9 @@ namespace T {
         }
 
         public void Unstl() {
+            if (!_isInstl) {
+                return;
+            }
             ResMgr.Ins.Rls<GameObject>(_setArr, () => {
                 for (byte s = 0; s < _setArr.Length; s++) {
                     _setArr[s] = null;
@@ -47,6 +53,7 @@ namespace T {
                 for (byte e = 0; e < _elemArr.Length; e++) {
                     _elemArr[e][0] = null;
                 }
+                _canv = null;
                 _isInstl = false;
             });
         }
@@ -63,11 +70,11 @@ namespace T {
             }
         }
 
-        public void EnblSet(byte eSet) {
+        public void Enbl(byte eSet) {
             _setArr[eSet].SetActive(true);
         }
 
-        public void DsblSet(byte eSet) {
+        public void Dsbl(byte eSet) {
             _setArr[eSet].SetActive(false);
         }
 
@@ -77,6 +84,26 @@ namespace T {
 
         public void DsblElem(byte eRef) {
             ((Component)_elemArr[eRef][0]).gameObject.SetActive(false);
+        }
+
+        public void Front() {
+            for (byte s = 0; s < _setArr.Length; s++) {
+                _setArr[s].transform.SetAsLastSibling();
+            }
+        }
+
+        public void Front(byte eSet) {
+            _setArr[eSet].transform.SetAsLastSibling();
+        }
+
+        public void Back() {
+            for (byte s = 0; s < _setArr.Length; s++) {
+                _setArr[s].transform.SetAsFirstSibling();
+            }
+        }
+
+        public void Back(byte eSet) {
+            _setArr[eSet].transform.SetAsFirstSibling();
         }
     }
 }

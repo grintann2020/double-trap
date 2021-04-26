@@ -16,13 +16,14 @@ namespace DT {
 
         IEnumerator TestW(int sec, GameObject[] goArr = null) {
             yield return new WaitForSeconds(sec);
-            UIMgr.Ins.Unstl((byte)EUI.Splh);
-            // UIMgr.Ins.DsblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnA1);
+            // UIMgr.Ins.Unstl((byte)EUI.Splh);
+            // UIMgr.Ins.Unstl((byte)EUI.Fst);
+            UIMgr.Ins.Dsbl((byte)EUI.Splh, (byte)SplhUI.ESet.A1);
             // UIMgr.Ins.DsblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnB2);
             // UIMgr.Ins.DsblSet((byte)EUI.Splh, (byte)SplhUI.ESet.A1);
             yield return new WaitForSeconds(sec);
             // UIMgr.Ins.Instl((byte)EUI.Splh);
-            // UIMgr.Ins.EnblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnA1);
+            UIMgr.Ins.Enbl((byte)EUI.Splh, (byte)SplhUI.ESet.A1);
             // UIMgr.Ins.EnblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnB2);
             // UIMgr.Ins.EnblSet((byte)EUI.Splh, (byte)SplhUI.ESet.A1);
         }
@@ -42,8 +43,9 @@ namespace DT {
             VwMgr.Ins.SetCam((byte)EVw.Menu, Camera.main);
             VwMgr.Ins.SetPrj((byte)EVw.Menu, (byte)ECamPrj.Menu);
             UIMgr.Ins.SetCanv((byte)EUI.Splh, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
+            UIMgr.Ins.SetCanv((byte)EUI.Fst, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
             UIMgr.Ins.Instl((byte)EUI.Splh);
-        
+            UIMgr.Ins.Instl((byte)EUI.Fst);
             TestPgm.Ins.TestWait(2);
 
             // test LangMgr

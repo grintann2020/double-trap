@@ -34,19 +34,33 @@ namespace DT {
 
             _bssArr = new _bss[3];
             _bssArr[0] = BtnA1_Bss;
+            _bssArr[1] = BtnB1_Bss;
+            _bssArr[2] = BtnB2_Bss;
         }
 
         public void InvkUpd() {
-            Debug.Log("SplhUI -- InvkUpd");
+            // Debug.Log("SplhUI -- InvkUpd");
         }
 
         private void BtnA1_Bss() {
             ((Button)_elemArr[(byte)EElem.BtnA1][0]).onClick.AddListener(() => {
-                Debug.Log("btnA1.onClick !");
                 ResMgr.Ins.Load<Sprite>("SprA2", (Sprite spr) => {
                     ((Image)_elemArr[(byte)EElem.ImgA1][0]).sprite = spr;
                     ResMgr.Ins.Rls<Sprite>(spr);
                 });
+                UIMgr.Ins.Front((byte)EUI.Splh, (byte)ESet.A2);
+            });
+        }
+
+        private void BtnB1_Bss() {
+            ((Button)_elemArr[(byte)EElem.BtnB1][0]).onClick.AddListener(() => {
+                UIMgr.Ins.Front((byte)EUI.Fst);
+            });
+        }
+
+        private void BtnB2_Bss() {
+            ((Button)_elemArr[(byte)EElem.BtnB2][0]).onClick.AddListener(() => {
+                UIMgr.Ins.Front((byte)EUI.Splh, (byte)ESet.A1);
             });
         }
     }
