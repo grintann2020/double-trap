@@ -12,20 +12,15 @@ namespace DT {
     }
 
     public class StgPrm : IStgPrm {
-        
+
         public IStg[] IStgArr { get { return _iStgArr; } }
         private IStg[] _iStgArr = new IStg[Enum.GetNames(typeof(EStg)).Length];
-
-        public ISS[] ISSArr { get { return _iSSArr; } }
-        private ISS[] _iSSArr = new ISS[Enum.GetNames(typeof(ESS)).Length];
         private ISpc _iSquSpc;
         private ISpc _iHexSpc;
 
         public StgPrm() {
-            
-            _iSquSpc = new SquSpc(new SquCalc(), 1);
-            _iHexSpc = new HexSpc(new HexCalc(), 1); // For Test
-
+            _iSquSpc = new SquSpc(1, 1);
+            _iHexSpc = new HexSpc(1, 2); // For Test
             _iStgArr[(byte)EStg.ATut0] = new ATut0Stg(_iSquSpc);
             _iStgArr[(byte)EStg.ATut1] = new ATut1Stg(_iSquSpc);
             _iStgArr[(byte)EStg.XHex] = new XHexStg(_iHexSpc);

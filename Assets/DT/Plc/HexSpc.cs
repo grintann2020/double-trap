@@ -8,10 +8,7 @@ namespace DT {
 
     public class HexSpc : Spc, ISpc {
 
-        private HexCalc _calc;
-
-        public HexSpc(HexCalc calc, byte uWd) {
-            _calc = calc;
+        public HexSpc(byte uWd, byte uHt) {
             _uWd = uWd;
         }
 
@@ -26,8 +23,8 @@ namespace DT {
             ushort cols = (ushort)blkArr.GetLength(1);
             _iBlkArr = new HexBlk[rows][];
 
-            (float colSpacing, float rowSpacing) = _calc.DistributeDist((float)_uWd);
-            SCoord3 orgPos = _calc.CenterPos(cols, rows, colSpacing, rowSpacing);
+            (float colSpacing, float rowSpacing) = HexCalc.DistributeDist((float)_uWd);
+            SCoord3 orgPos = HexCalc.CenterPos(cols, rows, colSpacing, rowSpacing);
             for (ushort r = 0; r < rows; r++) {
                 for (ushort c = 0; c < cols; c++) {
                     if (blkArr[r][c] == 0) {
@@ -38,7 +35,7 @@ namespace DT {
                         float z = orgPos.Z - r * rowSpacing;
                         // x += this.hexCalc.UnitWidth((float)uWd) * (row & 1);
                         if (r % 2 != 0) {
-                            x += _calc.UnitW(_calc.HexW((float)_uWd));
+                            x += HexCalc.UnitW(HexCalc.HexW((float)_uWd));
                         }
                         _iBlkArr[r][c] = new HexBlk(new SGrid3(r, c, 0), new SCoord3(x, y, z));
                     }

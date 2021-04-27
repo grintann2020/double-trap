@@ -6,21 +6,19 @@ namespace DT {
 
     public class FstVw : Vw, IVw {
 
-        public enum EAct {
+        public enum EChg {
             Test, GG, ok
         }
 
-        public FstVw(SCamPrj defProj, SOrnt3 defOrnt) : base(defProj, defOrnt) {
-            _dActArr = new _dAct[Enum.GetNames(typeof(EAct)).Length];
-            _dActArr[(byte)EAct.Test] = Test;
-            _dActArr[(byte)EAct.GG] = GG;
+        public FstVw(SCamPrj dflProj, SOrnt3 dflOrnt) : base(dflProj, dflOrnt) {
+            _dChgArr = new _dChg[Enum.GetNames(typeof(EChg)).Length];
+            _dChgArr[(byte)EChg.Test] = Test;
+            _dChgArr[(byte)EChg.GG] = GG;
         }
 
         public void InvkUpd() {
 
         }
-
-        
 
         public void Test() {
             Debug.Log("FstVw -- Test()");

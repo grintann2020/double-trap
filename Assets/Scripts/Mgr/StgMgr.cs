@@ -3,25 +3,32 @@
     public class StgMgr : Sgltn<StgMgr> {
 
         private IStg[] _iStgArr;
-        private IStg _iCurrStg;
+        private IStg _iCurStg;
 
         public void Bind(IStgPrm iStgPrm) {
             _iStgArr = iStgPrm.IStgArr;
         }
 
         public void Init() {
-            _iCurrStg = null;
+            _iCurStg = null;
         }
 
         public void Imp(byte eStg) { // excute specific program by Enum
-            if (_iCurrStg != null) {
-                if (_iStgArr[eStg] == _iCurrStg) {
+            if (_iCurStg != null) {
+                if (_iStgArr[eStg] == _iCurStg) {
                     return;
                 }
-                _iCurrStg.Clr();
+                _iCurStg.Clr();
             }
-            _iCurrStg = _iStgArr[eStg];
-            _iCurrStg.Imp();
+            _iCurStg = _iStgArr[eStg];
+            _iCurStg.Imp();
+        }
+
+        public void Clr(byte eStg) {
+            if (_iCurStg != null) {
+                _iCurStg.Clr();
+                _iCurStg = null;
+            }
         }
     }
 }

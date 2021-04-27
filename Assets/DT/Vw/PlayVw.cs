@@ -6,23 +6,19 @@ namespace DT {
 
     public class PlayVw : Vw, IVw {
 
-        public enum EAct {
+        public enum EChg {
             P1, P2, P3
         }
 
         public PlayVw(SCamPrj defProj, SOrnt3 defOrnt) : base(defProj, defOrnt) {
-            _dActArr = new _dAct[Enum.GetNames(typeof(EAct)).Length];
-            _dActArr[(byte)EAct.P1] = P1;
-            _dActArr[(byte)EAct.P2] = P2;
+            _dChgArr = new _dChg[Enum.GetNames(typeof(EChg)).Length];
+            _dChgArr[(byte)EChg.P1] = P1;
+            _dChgArr[(byte)EChg.P2] = P2;
         }
 
         public void InvkUpd() {
 
         }
-
-        // public void Act(byte act) {
-        //     _dActArr[act].Invoke();
-        // }
 
         public void P1() {
             Debug.Log("PlayVw -- P1()");

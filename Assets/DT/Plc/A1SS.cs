@@ -1,27 +1,38 @@
+using UnityEngine;
+using System;
 using T;
 
 namespace DT {
 
     public class A1SS : SS, ISS {
 
-        private const ushort DEF_ROWS = 4;
-        private const ushort DEF_COLS = 4;
+        public enum EAlt {
+            SS11, SS12
+        }
 
-        // public A1SS(ISpc iSpc) : base(iSpc) {
+        private const ushort ROWS = 4;
+        private const ushort COLS = 4;
+        private const ushort LAYS = 1;
+
         public A1SS() {
-            // _defBoolArr = new bool[DEF_ROWS][];
-            // _defBoolArr[0] = new bool[DEF_COLS] { true, true, true, true };
-            // _defBoolArr[1] = new bool[DEF_COLS] { true, true, true, true };
-            // _defBoolArr[2] = new bool[DEF_COLS] { true, true, true, true };
-            // _defBoolArr[3] = new bool[DEF_COLS] { true, true, true, true };
-            // _boolArr = _defBoolArr;
+            _dflArr = new ushort[ROWS][][];
+            _dflArr[0] = new ushort[COLS][] { new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1} };
+            _dflArr[1] = new ushort[COLS][] { new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1} };
+            _dflArr[2] = new ushort[COLS][] { new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1} };
+            _dflArr[3] = new ushort[COLS][] { new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1} };
+            _curArr = _dflArr;
 
-            // _defObjArr = new ushort[DEF_ROWS][];
-            // _defObjArr[0] = new ushort[DEF_COLS] { 1, 1, 1, 1 };
-            // _defObjArr[1] = new ushort[DEF_COLS] { 1, 1, 1, 1 };
-            // _defObjArr[2] = new ushort[DEF_COLS] { 1, 1, 1, 1 };
-            // _defObjArr[3] = new ushort[DEF_COLS] { 1, 1, 1, 1 };
-            // _objArr = _defObjArr;
+            _dAltArr = new _dAlt[Enum.GetNames(typeof(EAlt)).Length];
+            _dAltArr[(byte)EAlt.SS11] = SS11;
+            _dAltArr[(byte)EAlt.SS12] = SS12;
+        }
+
+        public void SS11() {
+            Debug.Log("Alt --> SS11");
+        }
+
+        public void SS12() {
+            Debug.Log("Alt --> SS12");
         }
     }
 }

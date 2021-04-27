@@ -2,37 +2,25 @@ namespace T {
 
     public class SS {
 
-        public ushort Rows { get { return (ushort)_objArr.GetLength(0); } }
-        public ushort Cols { get { return (ushort)_objArr.GetLength(1); } }
-        // public bool[][] BoolArr { get { return _boolArr; } }
-        public ushort[][] ObjArr { get { return _objArr; } }
-        // protected ISpc _iSpc;
-        // protected IBlk[][] _iBlkArr;
-        // protected bool[][] _defBoolArr, _boolArr;
-        // protected ushort[][] _defObjArr, _objArr;
-        protected ushort[][] _objArr;
+        public ushort DflRows { get { return (ushort)_dflArr.GetLength(0); } }
+        public ushort DflCols { get { return (ushort)_dflArr.GetLength(1); } }
+        public ushort DflLays { get { return (ushort)_dflArr.GetLength(2); } }
+        public ushort CurRows { get { return (ushort)_curArr.GetLength(0); } }
+        public ushort CurCols { get { return (ushort)_curArr.GetLength(1); } }
+        public ushort CurLays { get { return (ushort)_curArr.GetLength(2); } }
+        public ushort[][][] DflArr { get { return _dflArr; } }
+        public ushort[][][] CurArr { get { return _curArr; } }
+        protected delegate void _dAlt();
+        protected _dAlt[] _dAltArr;
+        protected ushort[][][] _dflArr;
+        protected ushort[][][] _curArr;
         
-
-        // public SS(ISpc iSpc) {
-            // Debug.Log("SS -- Contructor( ) -- " + iSpc);
-            // _iSpc = iSpc;
-        // }
-
-        // public void SetDef() {
-        //     _boolArr = _defBoolArr;
-        //     _objArr = _defObjArr;
-        // }
-
-        public void Constr() {
-            // _iBlkArr = _iSpc.Abstr(_objArr);
+        public void Dfl() {
+            _curArr = _dflArr;
         }
 
-        public void Estb() {
-
-        }
-
-        public void Elim() {
-
+        public void Alt(byte eAlt) {
+            _dAltArr[eAlt].Invoke();
         }
     }
 }

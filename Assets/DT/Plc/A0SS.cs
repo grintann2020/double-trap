@@ -1,31 +1,40 @@
+using UnityEngine;
+using System;
 using T;
 
 namespace DT {
 
     public class A0SS : SS, ISS {
 
-        private const ushort DEF_ROWS = 6;
-        private const ushort DEF_COLS = 6;
+        public enum EAlt {
+            SS01, SS02
+        }
 
-        // public A0SS(ISpc iSpc) : base(iSpc) {
+        private const ushort ROWS = 6;
+        private const ushort COLS = 6;
+        private const ushort LAYS = 2;
+
         public A0SS() {
-            // _defBoolArr = new bool[DEF_ROWS][];
-            // _defBoolArr[0] = new bool[DEF_COLS] { true, true, true, true, true, true };
-            // _defBoolArr[1] = new bool[DEF_COLS] { false, true, true, true, true, true };
-            // _defBoolArr[2] = new bool[DEF_COLS] { false, true, true, true, true, true };
-            // _defBoolArr[3] = new bool[DEF_COLS] { true, true, true, true, true, true };
-            // _defBoolArr[4] = new bool[DEF_COLS] { true, true, true, true, true, true };
-            // _defBoolArr[5] = new bool[DEF_COLS] { true, true, true, true, true, true };
-            // _boolArr = _defBoolArr;
+            _dflArr = new ushort[ROWS][][];
+            _dflArr[0] = new ushort[COLS][] { new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 } };
+            _dflArr[1] = new ushort[COLS][] { new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 } };
+            _dflArr[2] = new ushort[COLS][] { new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 } };
+            _dflArr[3] = new ushort[COLS][] { new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 } };
+            _dflArr[4] = new ushort[COLS][] { new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 } };
+            _dflArr[5] = new ushort[COLS][] { new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 }, new ushort[LAYS] { 1, 1 } };
+            _curArr = _dflArr;
 
-            _objArr = new ushort[DEF_ROWS][];
-            _objArr[0] = new ushort[DEF_COLS] { 1, 1, 1, 1, 1, 1 };
-            _objArr[1] = new ushort[DEF_COLS] { 1, 1, 1, 1, 1, 1 };
-            _objArr[2] = new ushort[DEF_COLS] { 1, 1, 1, 1, 1, 1 };
-            _objArr[3] = new ushort[DEF_COLS] { 1, 1, 1, 1, 1, 1 };
-            _objArr[4] = new ushort[DEF_COLS] { 1, 1, 1, 1, 1, 1 };
-            _objArr[5] = new ushort[DEF_COLS] { 1, 1, 1, 1, 1, 1 };
-            // _objArr = _objArr;
+            _dAltArr = new _dAlt[Enum.GetNames(typeof(EAlt)).Length];
+            _dAltArr[(byte)EAlt.SS01] = SS01;
+            _dAltArr[(byte)EAlt.SS02] = SS02;
+        }
+
+        public void SS01() {
+            Debug.Log("Alt --> SS01");
+        }
+
+        public void SS02() {
+            Debug.Log("Alt --> SS02");
         }
     }
 }

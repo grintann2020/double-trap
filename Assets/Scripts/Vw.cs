@@ -4,22 +4,22 @@ namespace T {
 
     public class Vw {
 
-        protected delegate void _dAct();
-        protected _dAct[] _dActArr;
+        protected delegate void _dChg();
+        protected _dChg[] _dChgArr;
         protected Camera _cam;
-        private SCamPrj _defPrj;
-        private SOrnt3 _defOrnt;
+        private SCamPrj _dflPrj;
+        private SOrnt3 _dflOrnt;
 
-        public Vw(SCamPrj defPrj, SOrnt3 defOrnt) {
-            _defPrj = defPrj;
-            _defOrnt = defOrnt;
+        public Vw(SCamPrj dflPrj, SOrnt3 dflOrnt) {
+            _dflPrj = dflPrj;
+            _dflOrnt = dflOrnt;
         }
 
-        public void SetCam(Camera cam) {
+        public void Cam(Camera cam) {
             _cam = cam;
         }
 
-        public void SetPrj(SCamPrj prj) {
+        public void Prj(SCamPrj prj) {
             _cam.orthographic = prj.OP;
             _cam.orthographicSize = prj.OPSize;
             _cam.fieldOfView = prj.FOV;
@@ -28,26 +28,18 @@ namespace T {
             _cam.farClipPlane = prj.Far;
         }
 
-        public void SetDef() {
-            SetPrj(_defPrj);
-            SetOrnt(_defOrnt);
-        }
-
-        public void SetOrnt(SOrnt3 ornt) {
+        public void Ornt(SOrnt3 ornt) {
             _cam.transform.position = new Vector3(ornt.A.X, ornt.A.Y, ornt.A.Z);
             _cam.transform.LookAt(new Vector3(ornt.B.X, ornt.B.Y, ornt.B.Z));
         }
 
-        public void Act(byte eAct) {
-            _dActArr[eAct].Invoke();
+        public void Dfl() {
+            Prj(_dflPrj);
+            Ornt(_dflOrnt);
         }
 
-        // public void Enbl() {
-        //    _cam.enabled = true; 
-        // }
-
-        // public void Dsbl() {
-        //    _cam.enabled = false; 
-        // }
+        public void Chg(byte eChg) {
+            _dChgArr[eChg].Invoke();
+        }
     }
 }

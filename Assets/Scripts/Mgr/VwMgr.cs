@@ -16,20 +16,20 @@ namespace T {
 
         }
 
-        public void SetCam(byte eVw, Camera cam) {
-            _iVwArr[eVw].SetCam(cam);
+        public void Cam(byte eVw, Camera cam) {
+            _iVwArr[eVw].Cam(cam);
         }
 
-        public void SetPrj(byte eVw, byte ePrj) {
-            _iVwArr[eVw].SetPrj(_sPrjArr[ePrj]);
+        public void Prj(byte eVw, byte ePrj) {
+            _iVwArr[eVw].Prj(_sPrjArr[ePrj]);
         }
 
-        public IVw GetVw(byte eVw) {
+        public IVw Vw(byte eVw) {
             return _iVwArr[eVw];
         }
 
-        public void Act(byte eVw, byte eAct) {
-            _iVwArr[eVw].Act(eAct);
+        public void Chg(byte eVw, byte eAct) {
+            _iVwArr[eVw].Chg(eAct);
         }
     }
 }

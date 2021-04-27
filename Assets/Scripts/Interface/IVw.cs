@@ -4,11 +4,11 @@ namespace T {
 
     public interface IVw {
 
-        void SetCam(Camera cam);
-        void SetDef();
-        void SetPrj(SCamPrj sCamPrj);
-        void SetOrnt(SOrnt3 ornt);
-        void Act(byte act);
+        void Cam(Camera cam);
+        void Dfl();
+        void Prj(SCamPrj sCamPrj);
+        void Ornt(SOrnt3 sOrnt);
+        void Chg(byte chg);
 
         // extends
         void InvkUpd();

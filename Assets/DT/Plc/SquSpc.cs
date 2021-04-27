@@ -8,19 +8,9 @@ namespace DT {
 
     public class SquSpc : Spc, ISpc {
 
-        private SquCalc _calc;
-
-        public SquSpc(SquCalc calc, byte uWd) {
-            _calc = calc;
+        public SquSpc(byte uWd, byte uHt) {
             _uWd = uWd;
-        }
-
-        public IBlk[][] Abstr(ushort[][] blkArr) {
-            ushort rows = (ushort)blkArr.GetLength(0);
-            ushort cols = (ushort)blkArr.GetLength(1);
-            _iBlkArr = new SquBlk[rows][];
-            return _iBlkArr;
-            // SCoord2 startPos = _calc.GetCntr(cols, rows, colSpacing, rowSpacing);
+            _uHt = uHt;
         }
     }
 }

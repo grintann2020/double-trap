@@ -40,8 +40,8 @@ namespace DT {
 
         public void Exe() {
             // Debug.Log("LnchPgmPgm -- Exe()");
-            VwMgr.Ins.SetCam((byte)EVw.Menu, Camera.main);
-            VwMgr.Ins.SetPrj((byte)EVw.Menu, (byte)ECamPrj.Menu);
+            VwMgr.Ins.Cam((byte)EVw.Menu, Camera.main);
+            VwMgr.Ins.Prj((byte)EVw.Menu, (byte)ECamPrj.Menu);
             UIMgr.Ins.SetCanv((byte)EUI.Splh, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
             UIMgr.Ins.SetCanv((byte)EUI.Fst, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
             UIMgr.Ins.Instl((byte)EUI.Splh);
@@ -59,7 +59,7 @@ namespace DT {
 
             // test VwMgr
             // VwMgr.Ins.Act((byte)EVw.Menu, (byte)MenuVw.EAct.Test);
-            VwMgr.Ins.Act((byte)EVw.Menu, (byte)FstVw.EAct.GG);
+            VwMgr.Ins.Chg((byte)EVw.Menu, (byte)FstVw.EChg.GG);
             // VwMgr.Ins.Act((byte)EVw.Play, (byte)PlayVw.EAct.P1);
             // VwMgr.Ins.Act((byte)EVw.Play, (byte)PlayVw.EAct.P2);
 
