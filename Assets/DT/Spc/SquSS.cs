@@ -6,11 +6,18 @@ namespace DT {
         N, E, W, S, NW, NE, SW, SE,
     }
 
-    public class SquSpc : Spc, ISpc {
+    public class SquSS : SS, ISS {
 
-        public SquSpc(byte uWd, byte uHt) {
-            _uWd = uWd;
-            _uHt = uHt;
+        public SquSS(byte uWd, byte uHt) : base (uWd, uHt) {
+
+        }
+
+        public IBlk[][] Abstr(ushort[][] objArr) {
+            ushort rows = (ushort)objArr.GetLength(0);
+            ushort cols = (ushort)objArr.GetLength(1);
+            // _iBlkArr = new SquBlk[rows][];
+            return _iBlkArr;
+            // SCoord2 startPos = _calc.GetCntr(cols, rows, colSpacing, rowSpacing);
         }
     }
 }

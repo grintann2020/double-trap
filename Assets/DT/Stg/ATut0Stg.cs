@@ -4,8 +4,9 @@ namespace DT {
 
     public class ATut0Stg : Stg, IStg {
 
-        public ATut0Stg(ISpc iSpc) : base(iSpc) {
-            
+        // public ATut0Stg(ISpc iSpc) : base(iSpc) {
+        public ATut0Stg() {
+
         }
 
         public void Imp() {

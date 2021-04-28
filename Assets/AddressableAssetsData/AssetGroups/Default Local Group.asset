@@ -107,6 +107,24 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: de2ad251a74202a40b0a9ac88dbeb9de
+    m_Address: TiieBlue
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4c331577199fc084388f4450e275bef5
+    m_Address: TiieGreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 71247470a2f76624e85281f0df011082
+    m_Address: TiieRed
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 720cef4c3a121714289b6c5bf1031671, type: 2}
   m_SchemaSet:

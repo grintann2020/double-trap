@@ -5,7 +5,7 @@ namespace T {
     public interface IUI {
 
         bool IsInstl { get; }
-        void SetCanv(Canvas canv);
+        void Canv(Canvas canv);
         void Instl(); // install
         void Unstl(); // uninstall
         void Enbl(); // Enable();

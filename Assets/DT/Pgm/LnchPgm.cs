@@ -42,14 +42,14 @@ namespace DT {
             // Debug.Log("LnchPgmPgm -- Exe()");
             VwMgr.Ins.Cam((byte)EVw.Menu, Camera.main);
             VwMgr.Ins.Prj((byte)EVw.Menu, (byte)ECamPrj.Menu);
-            UIMgr.Ins.SetCanv((byte)EUI.Splh, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
-            UIMgr.Ins.SetCanv((byte)EUI.Fst, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
+            UIMgr.Ins.Canv((byte)EUI.Splh, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
+            UIMgr.Ins.Canv((byte)EUI.Fst, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
             UIMgr.Ins.Instl((byte)EUI.Splh);
             UIMgr.Ins.Instl((byte)EUI.Fst);
             TestPgm.Ins.TestWait(2);
 
             // test LangMgr
-            LangMgr.Ins.Chg(ELang.ZH_CN);
+            LangMgr.Ins.Swp(ELang.ZH_CN);
             // LangMgr.Ins.Chg((byte)ELang.EN_US);
             // Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Three_U));
             // Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Six_U, ELang.EN));

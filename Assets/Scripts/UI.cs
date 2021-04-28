@@ -18,7 +18,7 @@ namespace T {
         // _elemArr[(byte)ERes][2] --> string) name of reference GameObject
         // _elemArr[(byte)ERes][3] --> Type) type of Component
 
-        public void SetCanv(Canvas canv) {
+        public void Canv(Canvas canv) {
             _canv = canv;
         }
 

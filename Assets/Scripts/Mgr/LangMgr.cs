@@ -41,21 +41,21 @@ namespace T {
             _eCurrLang = ELang.EN;
         }
 
-        public void Chg(byte eLang) {
+        public void Swp(byte eLang) {
             if ((ELang)eLang == _eCurrLang) {
                 return;
             }
             _eCurrLang = (ELang)eLang;
         }
 
-        public void Chg(ELang eLang) {
+        public void Swp(ELang eLang) {
             if (eLang == _eCurrLang) {
                 return;
             }
             _eCurrLang = eLang;
         }
 
-        public void Chg(SystemLanguage sysLang) {
+        public void Swp(SystemLanguage sysLang) {
             if (_sysLangArr[(byte)sysLang] == _eCurrLang) {
                 return;
             }

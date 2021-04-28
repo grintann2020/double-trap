@@ -6,16 +6,16 @@ namespace T {
         // public ushort Cols { get { return (ushort)_objArr.GetLength(1); } }
         // public bool[][] BoolArr { get { return _boolArr; } }
         // public ushort[][] ObjArr { get { return _objArr; } }
-        protected ISpc _iSpc;
-        // protected GameObject[]  
+
         protected IBlk[][] _iBlkArr;
         // protected bool[][] _defBoolArr, _boolArr;
         // protected ushort[][] _defObjArr, _objArr;
         
 
-        public Stg(ISpc iSpc) {
+        // public Stg(ISpc iSpc) {
+        public Stg() {
             // Debug.Log("Stg -- Contructor( ) -- " + iSpc);
-            _iSpc = iSpc;
+            // _iSpc = iSpc;
         }
 
         // public void Def() {

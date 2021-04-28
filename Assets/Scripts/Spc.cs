@@ -2,16 +2,30 @@ namespace T {
 
     public class Spc {
 
-        protected byte _uWd; // unit width
-        protected byte _uHt; // unit height
-        protected IBlk[][] _iBlkArr; // interface of the array of blocks
+        public ushort DflRows { get { return (ushort)_dflArr.GetLength(0); } }
+        public ushort DflCols { get { return (ushort)_dflArr.GetLength(1); } }
+        public ushort DflLays { get { return (ushort)_dflArr.GetLength(2); } }
+        public ushort CurRows { get { return (ushort)_curArr.GetLength(0); } }
+        public ushort CurCols { get { return (ushort)_curArr.GetLength(1); } }
+        public ushort CurLays { get { return (ushort)_curArr.GetLength(2); } }
+        public ushort[][][] DflArr { get { return _dflArr; } }
+        public ushort[][][] CurArr { get { return _curArr; } }
+        protected delegate void _dAlt();
+        protected _dAlt[] _dAltArr;
+        protected ISS _iSS;
+        protected ushort[][][] _dflArr;
+        protected ushort[][][] _curArr;
 
-        public IBlk[][] Abstr(ushort[][] objArr) {
-            ushort rows = (ushort)objArr.GetLength(0);
-            ushort cols = (ushort)objArr.GetLength(1);
-            // _iBlkArr = new SquBlk[rows][];
-            return _iBlkArr;
-            // SCoord2 startPos = _calc.GetCntr(cols, rows, colSpacing, rowSpacing);
+        public Spc(ISS iSS) {
+            _iSS = iSS;
+        }
+        
+        public void Dfl() {
+            _curArr = _dflArr;
+        }
+
+        public void Alt(byte eAlt) {
+            _dAltArr[eAlt].Invoke();
         }
     }
 }

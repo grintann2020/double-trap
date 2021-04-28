@@ -6,10 +6,10 @@ namespace DT {
         E, NE, NW, W, SW, SE,
     }
 
-    public class HexSpc : Spc, ISpc {
+    public class HexSS : SS, ISS {
 
-        public HexSpc(byte uWd, byte uHt) {
-            _uWd = uWd;
+        public HexSS(byte uWd, byte uHt) : base (uWd, uHt) {
+
         }
 
         public IBlk[][] Abstr(ushort[][] blkArr) {

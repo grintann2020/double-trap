@@ -4,7 +4,8 @@ namespace DT {
 
     public class XHexStg : Stg, IStg {
 
-        public XHexStg(ISpc iSpc) : base(iSpc) {
+        // public XHexStg(ISpc iSpc) : base(iSpc) {
+        public XHexStg() {
 
         }
 

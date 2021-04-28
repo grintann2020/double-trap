@@ -23,11 +23,11 @@ namespace T {
             }
         }
 
-        public void SetCanv(byte eUI, Canvas canv) {
-            _iUIArr[eUI].SetCanv(canv);
+        public void Canv(byte eUI, Canvas canv) {
+            _iUIArr[eUI].Canv(canv);
         }
 
-        public IUI GetUI(byte eUI) {
+        public IUI UI(byte eUI) {
             return _iUIArr[eUI];
         }
 

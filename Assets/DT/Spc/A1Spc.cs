@@ -4,17 +4,17 @@ using T;
 
 namespace DT {
 
-    public class A1SS : SS, ISS {
+    public class A1Spc : Spc, ISpc {
 
         public enum EAlt {
-            SS11, SS12
+            Spc11, Spc12
         }
 
         private const ushort ROWS = 4;
         private const ushort COLS = 4;
         private const ushort LAYS = 1;
 
-        public A1SS() {
+        public A1Spc(ISS iSS) : base(iSS) {
             _dflArr = new ushort[ROWS][][];
             _dflArr[0] = new ushort[COLS][] { new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1} };
             _dflArr[1] = new ushort[COLS][] { new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1}, new ushort[LAYS] {1} };
@@ -23,16 +23,16 @@ namespace DT {
             _curArr = _dflArr;
 
             _dAltArr = new _dAlt[Enum.GetNames(typeof(EAlt)).Length];
-            _dAltArr[(byte)EAlt.SS11] = SS11;
-            _dAltArr[(byte)EAlt.SS12] = SS12;
+            _dAltArr[(byte)EAlt.Spc11] = Spc11;
+            _dAltArr[(byte)EAlt.Spc12] = Spc12;
         }
 
-        public void SS11() {
-            Debug.Log("Alt --> SS11");
+        public void Spc11() {
+            Debug.Log("Alt --> Spc11");
         }
 
-        public void SS12() {
-            Debug.Log("Alt --> SS12");
+        public void Spc12() {
+            Debug.Log("Alt --> Spc12");
         }
     }
 }

@@ -14,7 +14,7 @@ namespace CS {
         private IPgm[] _iPgmArr = new IPgm[Enum.GetNames(typeof(EPgm)).Length];
 
         private InitPgm _initPgm = new InitPgm(); // Initialize Program
-        private LaunchPgm _launchPgm = new LaunchPgm(); // Launch Program
+        private LnchPgm _launchPgm = new LnchPgm(); // Launch Program
 
         public PgmPrm() {
             _iPgmArr[(byte)EPgm.Init] = _initPgm;

@@ -13,8 +13,6 @@ namespace DT {
 
         public void Exe() {
             Debug.Log("StgPgm Exe()");
-
-            
         }
 
         public void End() {
