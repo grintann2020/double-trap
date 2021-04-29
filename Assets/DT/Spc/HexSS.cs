@@ -8,27 +8,33 @@ namespace DT {
 
     public class HexSS : SS, ISS {
 
-        public HexSS(byte uWd, byte uHt) : base (uWd, uHt) {
+        public HexSS(byte uWd, byte uHt) : base(uWd, uHt) {
 
         }
 
-        public IBlk[][] Abstr(ushort[][] blkArr) {
+        // public override byte[] TTT(byte[] bArr) {
+        //     return bArr;
+        // }
+
+        public override IBlk[][][] Abstr(byte[][][] eObjArr, SCoord3 ctr) {
             // float uWd = 1.0f;
             // float unitWidth = (HEXSCALE * uWd) / 2;
             // float unitHeight = (2 * uWd) / 4;
             // float rowSpacing = unitWidth * 2;
             // float colSpacing = unitHeight * 3;
 
-            ushort rows = (ushort)blkArr.GetLength(0);
-            ushort cols = (ushort)blkArr.GetLength(1);
-            _iBlkArr = new HexBlk[rows][];
+            byte rows = (byte)eObjArr.GetLength(0);
+            byte cols = (byte)eObjArr.GetLength(1);
+            IBlk[][][] iBlkArr = new HexBlk[rows][][];
 
             (float colSpacing, float rowSpacing) = HexCalc.DistributeDist((float)_uWd);
             SCoord3 orgPos = HexCalc.CenterPos(cols, rows, colSpacing, rowSpacing);
-            for (ushort r = 0; r < rows; r++) {
-                for (ushort c = 0; c < cols; c++) {
-                    if (blkArr[r][c] == 0) {
-                        _iBlkArr[r][c] = null;
+
+            for (byte r = 0; r < rows; r++) {
+                for (byte c = 0; c < cols; c++) {
+                    // for (byte l = 0; l < lays; l++) {
+                    if (eObjArr[r][c][0] == 0) {
+                        iBlkArr[r][c][0] = null;
                     } else {
                         float x = orgPos.X + c * colSpacing;
                         float y = orgPos.Y;
@@ -37,8 +43,9 @@ namespace DT {
                         if (r % 2 != 0) {
                             x += HexCalc.UnitW(HexCalc.HexW((float)_uWd));
                         }
-                        _iBlkArr[r][c] = new HexBlk(new SGrid3(r, c, 0), new SCoord3(x, y, z));
+                        iBlkArr[r][c][0] = new HexBlk(new SGrid3(r, c, 0), new SCoord3(x, y, z));
                     }
+                    // }
                 }
             }
 
@@ -79,7 +86,11 @@ namespace DT {
             //         }
             //     }
             // }
-            return _iBlkArr;
+            return iBlkArr;
+        }
+
+        public override void Cnstr(byte[][][] eObjArr, string[] objArr) {
+
         }
     }
 }

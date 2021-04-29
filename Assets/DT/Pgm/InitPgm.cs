@@ -17,6 +17,7 @@ namespace DT {
             UIMgr.Ins.Init();
             IaMgr.Ins.Init();
             StgMgr.Ins.Init();
+            SpcMgr.Ins.Init();
             PgmMgr.Ins.Next();
         }
 

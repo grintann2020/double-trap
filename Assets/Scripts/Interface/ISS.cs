@@ -2,6 +2,6 @@ namespace T {
 
     public interface ISS {
 
-        IBlk[][] Abstr(ushort[][] objArr);
+        IBlk[][][] Abstr(byte[][][] eObjArr, SCoord3 ctr);
     }
 }

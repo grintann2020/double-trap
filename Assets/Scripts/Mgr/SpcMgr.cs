@@ -20,16 +20,20 @@ namespace T {
             return _iSpcArr[eSpc];
         }
 
-        public ushort[][][] DflArr(byte eSpc) {
+        public byte[][][] DflArr(byte eSpc) {
             return _iSpcArr[eSpc].DflArr;
         }
 
-        public ushort[][][] CurArr(byte eSpc) {
+        public byte[][][] CurArr(byte eSpc) {
             return _iSpcArr[eSpc].CurArr;
         }
 
         public void Alt(byte eSpc, byte eAlt) {
             _iSpcArr[eSpc].Alt(eAlt);
+        }
+
+        public void Abstr(byte eSpc, SCoord3 ctr) {
+            _iSpcArr[eSpc].Abstr(ctr);
         }
 
         // public void Constr(byte eSpc) { // excute specific program by Enum

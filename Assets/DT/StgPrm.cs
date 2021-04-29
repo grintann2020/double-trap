@@ -17,7 +17,6 @@ namespace DT {
         private IStg[] _iStgArr = new IStg[Enum.GetNames(typeof(EStg)).Length];
 
         public StgPrm() {
-            
             _iStgArr[(byte)EStg.ATut0] = new ATut0Stg();
             _iStgArr[(byte)EStg.ATut1] = new ATut1Stg();
             _iStgArr[(byte)EStg.XHex] = new XHexStg();

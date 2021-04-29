@@ -12,6 +12,7 @@ namespace DT {
         }
 
         public void Exe() {
+            StgMgr.Ins.Imp((byte)EStg.ATut0);
             Debug.Log("StgPgm Exe()");
         }
 
