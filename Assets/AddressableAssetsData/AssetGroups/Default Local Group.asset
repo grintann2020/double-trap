@@ -108,19 +108,43 @@ MonoBehaviour:
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: de2ad251a74202a40b0a9ac88dbeb9de
-    m_Address: TiieBlue
+    m_Address: TileBlue
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: 4c331577199fc084388f4450e275bef5
-    m_Address: TiieGreen
+    m_Address: TileGreen
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: 71247470a2f76624e85281f0df011082
-    m_Address: TiieRed
+    m_Address: TileRed
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: daf223c4b775b5d43b6ba5bb01fd5ba1
+    m_Address: Black
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1d2385be0acfb7e469042e0cbefc4c7b
+    m_Address: White
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d94ef4376be4bc04ca3be8b1eb90b5ad
+    m_Address: TileBlack
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ed939ec96928b7443a3d3d99efb347b7
+    m_Address: TileWhite
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

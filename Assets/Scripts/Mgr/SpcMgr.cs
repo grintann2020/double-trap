@@ -36,6 +36,10 @@ namespace T {
             _iSpcArr[eSpc].Abstr(ctr);
         }
 
+        public void Cnstr(byte eSpc) {
+            _iSpcArr[eSpc].Cnstr();
+        }
+
         // public void Constr(byte eSpc) { // excute specific program by Enum
         //     if (_iCurrSpc != null) {
         //         if (_iSpcArr[eSpc] == _iCurrSpc) {

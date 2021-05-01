@@ -89,8 +89,9 @@ namespace DT {
             return iBlkArr;
         }
 
-        public override void Cnstr(byte[][][] eObjArr, string[] objArr) {
-
+        
+        // public override void Cnstr(byte[][][] eObjArr, string[] uArr) {
+        public override void Cnstr(IBlk[][][] iBlkArr, string[][] uArr) {
         }
     }
 }

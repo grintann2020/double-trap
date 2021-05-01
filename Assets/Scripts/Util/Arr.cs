@@ -1,6 +1,6 @@
 public static class Arr {
 
-    public static T[] Affx<T>(T[] arr, T itm) {
+    public static T[] Add<T>(T[] arr, T itm) {
         if (arr == null) {
             return new T[] { itm };
         }
@@ -9,6 +9,21 @@ public static class Arr {
             rslt[i] = arr[i];
         }
         rslt[arr.Length] = itm;
+        return rslt;
+    }
+
+    public static T[] Rmv<T>(T[] arr, ushort idx) {
+        if (arr == null) {
+            return null;
+        }
+        T[] rslt = new T[arr.Length - 1];
+        ushort r = 0;
+        for (ushort i = 0; i < arr.Length; i++) {
+            if (i != idx) {
+                rslt[r] = arr[i];
+                r++;
+            }
+        }
         return rslt;
     }
 

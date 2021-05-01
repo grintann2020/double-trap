@@ -26,7 +26,7 @@ namespace T {
             if (_isInstl) {
                 return;
             }
-            ResMgr.Ins.Inst(_keyArr, (GameObject[] resArr) => {
+            ResMgr.Ins.Inst(_keyArr, _canv.transform, (GameObject[] resArr) => {
                 for (byte r = 0; r < resArr.Length; r++) {
                     _setArr[r] = resArr[r];
                 }
@@ -39,7 +39,7 @@ namespace T {
                     }
                 }
                 _isInstl = true;
-            }, _canv.transform);
+            });
         }
 
         public void Unstl() {

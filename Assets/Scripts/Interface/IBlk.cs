@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace T {
 
     public interface IBlk {
@@ -10,5 +12,7 @@ namespace T {
         float X { get; }
         float Z { get; }
         float Y { get; }
+        byte EU { get; set; }
+        void Inp(GameObject go);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using T;
 
@@ -13,11 +14,11 @@ namespace DT {
 
         }
 
-        public override IBlk[][][] Abstr(byte[][][] eObjArr, SCoord3 ctr) {
-            byte rows = (byte)eObjArr.GetLength(0);
-            byte cols = (byte)eObjArr[0].GetLength(0);
-            byte lays = (byte)eObjArr[0][0].GetLength(0);
-            Debug.Log("rows --> " + rows + ", cols --> " + cols + ", lays --> " + lays);
+        public override IBlk[][][] Abstr(byte[][][] eUArr, SCoord3 ctr) {
+            byte rows = (byte)eUArr.Length;
+            byte cols = (byte)eUArr[0].Length;
+            byte lays = (byte)eUArr[0][0].Length;
+            // Debug.Log("rows --> " + rows + ", cols --> " + cols + ", lays --> " + lays);
 
             IBlk[][][] iBlkArr = new SquBlk[rows][][];
             SCoord3 org = SquCalc.Org(rows, cols, _uWd);
@@ -26,13 +27,14 @@ namespace DT {
                 for (byte c = 0; c < cols; c++) {
                     iBlkArr[r][c] = new SquBlk[lays];
                     for (byte l = 0; l < lays; l++) {
-                        if (eObjArr[r][c][l] == 0) {
+                        if (eUArr[r][c][l] == 0) {
                             iBlkArr[r][c][l] = null;
                         } else {
                             float x = org.X + c * _uWd;
                             float y = org.Y + l * _uHt;
                             float z = org.Z - r * _uWd;
                             iBlkArr[r][c][l] = new SquBlk(new SGrid3(r, c, l), new SCoord3(x, y, z));
+                            iBlkArr[r][c][l].EU = eUArr[r][c][l];
                         }
                     }
                 }
@@ -75,35 +77,40 @@ namespace DT {
                     }
                 }
             }
-
             return iBlkArr;
         }
 
-        public override void Cnstr(byte[][][] eObjArr, string[] objArr) {
-            
+        public override void Cnstr(IBlk[][][] iBlkArr, string[][] uArr) {
+            // string[] keyArr = new string[0];
+            // Vector3[] posArr = new Vector3[0];
+            // Quaternion[] rotArr = new Quaternion[0];
+            for (byte r = 0; r < iBlkArr.Length; r++) {
+                for (byte c = 0; c < iBlkArr[r].Length; c++) {
+                    for (byte l = 0; l < iBlkArr[r][c].Length; l++) {
+                        if (iBlkArr[r][c][l] == null) {
+                            continue;
+                        }
+                        // keyArr = Arr.Affx<string>(keyArr, uArr[iBlkArr[r][c][l].EU][0]);
+                        // posArr = Arr.Affx<Vector3>(posArr, new Vector3(iBlkArr[r][c][l].X, iBlkArr[r][c][l].Y, iBlkArr[r][c][l].Z));
+                        // rotArr = Arr.Affx<Quaternion>(rotArr, Quaternion.identity);
+                        string key = uArr[iBlkArr[r][c][l].EU][0];
+                        Vector3 pos = new Vector3(iBlkArr[r][c][l].X, iBlkArr[r][c][l].Y, iBlkArr[r][c][l].Z);
+                        Quaternion rot = Quaternion.identity;
+                        // Debug.Log(uArr[iBlkArr[r][c][l].EU][0]);
+                        IBlk curBlk = iBlkArr[r][c][l];
+                        ResMgr.Ins.Inst(key, pos, rot, null, (GameObject res) => {
+                            curBlk.Inp(res);
+                        });
+                    }
+                }
+            }
         }
     }
 }
 
 // namespace T {
 //     public class Space {
-//         // public const float HEX_RADIAN = 1.0472f;
-//         public Hex[,] HexArr = null;
-//         private ECS _ecs = null;
-//         private HexCalc _hexCalc = null;
-//         // [WriteOnly, NativeDisableParallelForRestriction] NativeArray<Entity> entityArr;
-//         // [NativeDisableContainerSafetyRestriction] NativeArray<Entity> entityArr;
 
-//         public void Init() {
-
-//         }
-
-//         public void Bind(ECS eCS, HexCalc hexCalc) {
-//             _ecs = eCS;
-//             _hexCalc = hexCalc;
-//         }
-
-//         // public void Create(int cols, int rows, Size size)
 //         public void Construct(int[,] hexData, ESize size) {
 //             int rows = hexData.GetLength(0);
 //             int cols = hexData.GetLength(1);
