@@ -24,7 +24,7 @@ namespace T {
                 if (_iIaArr[eIa] == _iCurIa) {
                     return;
                 }
-                // _iCurIa.Clr();
+                _iCurIa = _iIaArr[eIa];
             }
         }
     }

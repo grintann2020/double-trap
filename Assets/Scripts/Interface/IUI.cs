@@ -18,7 +18,6 @@ namespace T {
         void Back();
         void Front(byte eSet);
         void Back(byte eSet);
-        // extends
         void InvkUpd();
     }
 }

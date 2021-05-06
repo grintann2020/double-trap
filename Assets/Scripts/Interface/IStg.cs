@@ -4,7 +4,6 @@ namespace T {
 
         void Imp();
         void Clr();
-        void Act();
         void InvkUpd();
     }
 }

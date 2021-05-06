@@ -4,7 +4,7 @@ using T;
 
 namespace DT {
 
-    public class ATut0Stg : Stg, IStg {
+    public class Ex0Stg : Stg, IStg {
 
         public enum EAct : byte {
             A, B, C, D
@@ -16,7 +16,7 @@ namespace DT {
 
         private int aaa, bbb, ccc = 0;
 
-        public ATut0Stg() {
+        public Ex0Stg() {
             _dBgnArr = new _dBgn[Enum.GetNames(typeof(EAct)).Length];
             _dBgnArr[(byte)EAct.A] = BgnA;
             _dBgnArr[(byte)EAct.B] = BgnB;
@@ -37,21 +37,21 @@ namespace DT {
             _dCondArr[(byte)ECond.B2] = CondB2;
             _dCondArr[(byte)ECond.C0] = CondC0;
 
-            _actArr = new byte[Enum.GetNames(typeof(EAct)).Length][][];
-            _actArr[(byte)EAct.A] = new byte[2][] {
+            _prcsArr = new byte[Enum.GetNames(typeof(EAct)).Length][][];
+            _prcsArr[(byte)EAct.A] = new byte[2][] {
                 new byte [PR] {(byte)ECond.A0, (byte)EAct.B},
                 new byte [PR] {(byte)ECond.A1, (byte)EAct.B},
             };
-            _actArr[(byte)EAct.B] = new byte[3][] {
+            _prcsArr[(byte)EAct.B] = new byte[3][] {
                 new byte [PR] {(byte)ECond.B0, (byte)EAct.C},
                 new byte [PR] {(byte)ECond.B1, (byte)EAct.C},
                 new byte [PR] {(byte)ECond.B2, (byte)EAct.D},
             };
-            _actArr[(byte)EAct.C] = new byte[1][] {
+            _prcsArr[(byte)EAct.C] = new byte[1][] {
                 new byte [PR] {(byte)ECond.C0, (byte)EAct.A},
             };
 
-            _actArr[(byte)EAct.D] = new byte[0][];
+            _prcsArr[(byte)EAct.D] = new byte[0][];
         }
 
         public override void Imp() {
@@ -77,8 +77,8 @@ namespace DT {
         }
 
         private void End() {
-            StgMgr.Ins.Imp((byte)EStg.ATut1);
-            StgMgr.Ins.Act((byte)EStg.ATut1);
+            StgMgr.Ins.Imp((byte)EStg.Ex1);
+            // StgMgr.Ins.Act((byte)EStg.ATut1);
             Debug.Log("ATut0Stg -- End");
         }
 
@@ -99,7 +99,7 @@ namespace DT {
 
         private bool CondA0() {
             if (aaa == 3) {
-                Debug.Log("ATut0Stg -- CondA0 -- aaa = " + aaa);
+                // Debug.Log("ATut0Stg -- CondA0 -- aaa = " + aaa);
                 return true;
             } else {
                 return false;
@@ -108,7 +108,7 @@ namespace DT {
 
         private bool CondA1() {
             if (aaa == 6) {
-                Debug.Log("ATut0Stg -- CondA1 -- aaa = " + aaa);
+                // Debug.Log("ATut0Stg -- CondA1 -- aaa = " + aaa);
                 return true;
             } else {
                 return false;
@@ -117,7 +117,7 @@ namespace DT {
 
         private bool CondB0() {
             if (bbb == 4) {
-                Debug.Log("ATut0Stg -- CondB0 -- bbb = " + bbb);
+                // Debug.Log("ATut0Stg -- CondB0 -- bbb = " + bbb);
                 return true;
             } else {
                 return false;
@@ -130,7 +130,7 @@ namespace DT {
 
         private bool CondB2() {
             if (bbb == 8) {
-                Debug.Log("ATut0Stg -- CondB2 -- bbb = " + bbb);
+                // Debug.Log("ATut0Stg -- CondB2 -- bbb = " + bbb);
                 return true;
             } else {
                 return false;
@@ -139,7 +139,7 @@ namespace DT {
 
         private bool CondC0() {
             if (ccc == 3) {
-                Debug.Log("ATut0Stg -- CondC0 -- ccc = " + ccc);
+                // Debug.Log("ATut0Stg -- CondC0 -- ccc = " + ccc);
                 return true;
             } else {
                 return false;

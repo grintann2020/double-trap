@@ -2,7 +2,7 @@ using T;
 
 namespace DT {
 
-    public class XHexStg : Stg, IStg {
+    public class ExHexStg : Stg, IStg {
 
         public override void Imp() {
             base.Imp();

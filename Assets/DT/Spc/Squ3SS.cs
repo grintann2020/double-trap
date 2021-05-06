@@ -101,6 +101,10 @@ namespace DT {
                 }
             }
         }
+
+        public override void Elim(IBlk[][][] iBlkArr) {
+
+        }
     }
 }
 

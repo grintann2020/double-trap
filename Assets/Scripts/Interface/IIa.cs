@@ -2,7 +2,7 @@ namespace T {
 
     public interface IIa {
 
-        void Init();
+        // void Enbl();
         void InvkUpd();
     }
 }

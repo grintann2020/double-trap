@@ -93,5 +93,8 @@ namespace DT {
         // public override void Cnstr(byte[][][] eObjArr, string[] uArr) {
         public override void Estb(IBlk[][][] iBlkArr, string[][] uArr) {
         }
+
+        public override void Elim(IBlk[][][] iBlkArr) {
+        }
     }
 }

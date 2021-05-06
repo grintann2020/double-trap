@@ -4,7 +4,7 @@ using T;
 
 namespace DT {
 
-    public class ATut1Stg : Stg, IStg {
+    public class Ex1Stg : Stg, IStg {
         
         public enum EAct : byte {
             TT1, End
@@ -16,7 +16,7 @@ namespace DT {
 
         private bool _isEnd = false;
 
-        public ATut1Stg() {
+        public Ex1Stg() {
             _dBgnArr = new _dBgn[Enum.GetNames(typeof(EAct)).Length];
             _dBgnArr[(byte)EAct.TT1] = Bgn1;
             _dBgnArr[(byte)EAct.End] = EndEnd;
@@ -28,11 +28,11 @@ namespace DT {
             _dCondArr = new _dCond[Enum.GetNames(typeof(ECond)).Length];
             _dCondArr[(byte)ECond.ABC] = ABC;
 
-            _actArr = new byte[Enum.GetNames(typeof(EAct)).Length][][];
-            _actArr[(byte)EAct.TT1] = new byte[1][] {
+            _prcsArr = new byte[Enum.GetNames(typeof(EAct)).Length][][];
+            _prcsArr[(byte)EAct.TT1] = new byte[1][] {
                 new byte [PR] {(byte)ECond.ABC, (byte)EAct.End},
             };
-            _actArr[(byte)EAct.End] = new byte[0][];
+            _prcsArr[(byte)EAct.End] = new byte[0][];
             // Debug.Log("ATut1Stg() -- Constructor");
         }
 

@@ -43,16 +43,5 @@ namespace T {
         public void Blk(byte eSpc, SGrid3 grid) {
             // _iSpcArr[eSpc].Blk();
         }
-
-        // public void Constr(byte eSpc) { // excute specific program by Enum
-        //     if (_iCurrSpc != null) {
-        //         if (_iSpcArr[eSpc] == _iCurrSpc) {
-        //             return;
-        //         }
-        //         _iCurrSpc.Elim();
-        //     }
-        //     _iCurrSpc = _iSpcArr[eSpc];
-        //     _iCurrSpc.Constr();
-        // }
     }
 }

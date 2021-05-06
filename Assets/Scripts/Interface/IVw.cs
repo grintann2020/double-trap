@@ -4,13 +4,14 @@ namespace T {
 
     public interface IVw {
 
-        void Cam(Camera cam);
-        void Dfl();
-        void Prj(SCamPrj sCamPrj);
+        void Stup(Camera cam); // setup
+        void Stdn(); // setdown
+        void Dfl(); // default
+        void Prj(byte ePrj); // projection
+        void Prj(SCamPrj sCamPrj); 
+        void Ornt(byte eOrnt); // orient
         void Ornt(SOrnt3 sOrnt);
-        void Chg(byte chg);
-
-        // extends
+        void Mov(byte eMov); // movement
         void InvkUpd();
     }
 }

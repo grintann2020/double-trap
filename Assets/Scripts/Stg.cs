@@ -8,57 +8,45 @@ namespace T {
         protected _dBgn[] _dBgnArr;
         protected _dUpd[] _dUpdArr;
         protected _dCond[] _dCondArr;
-        protected byte[][][] _actArr;
-        protected byte _eAct;
+        protected byte[][][] _prcsArr;
+        protected byte _ePrcs;
         protected bool _isImp;
-        protected bool _isAct;
         protected const byte PR = 2;
 
         public Stg() {
-            _eAct = 0;
+            _ePrcs = 0;
             _isImp = false;
-            _isAct = false;
         }
 
         public virtual void Imp() {
             _isImp = true;
+            _ePrcs = 0;
+            _dBgnArr[_ePrcs].Invoke();
+        }
+
+        public virtual void Imp(byte ePrcs) {
+            _isImp = true;
+            _ePrcs = ePrcs;
+            _dBgnArr[_ePrcs].Invoke();
         }
 
         public virtual void Clr() {
-            _eAct = 0;
+            _ePrcs = 0;
             _isImp = false;
-            _isAct = false;
-        }
-
-        public void Act() {
-            if (_isImp == false) {
-                return;
-            }
-            _eAct = 0;
-            _dBgnArr[_eAct].Invoke();
-            _isAct = true;
-        }
-
-        public void Act(byte eAct) {
-            if (_isImp == false) {
-                return;
-            }
-            _eAct = eAct;
-            _dBgnArr[_eAct].Invoke();
-            _isAct = true;
         }
 
         public void InvkUpd() {
-            if (_isImp == false || _isAct == false) {
+            if (_isImp == false) {
                 return;
             }
-            for (byte c = 0; c < _actArr[_eAct].Length; c++) {
-                if (_dCondArr[_actArr[_eAct][c][0]].Invoke()) {
-                    Act(_actArr[_eAct][c][1]);
+            for (byte c = 0; c < _prcsArr[_ePrcs].Length; c++) {
+                if (_dCondArr[_prcsArr[_ePrcs][c][0]].Invoke()) {
+                    _ePrcs = _prcsArr[_ePrcs][c][1];
+                    _dBgnArr[_ePrcs].Invoke();
                 }
             }
-            if (_dUpdArr[_eAct] != null) {
-                _dUpdArr[_eAct].Invoke();
+            if (_dUpdArr[_ePrcs] != null) {
+                _dUpdArr[_ePrcs].Invoke();
             }
         }
     }
