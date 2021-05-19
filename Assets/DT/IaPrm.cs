@@ -4,12 +4,12 @@ using T;
 
 namespace DT {
 
-    public enum EIa : byte {
-        A0, A1
-    }
-
     public enum EII : byte {
         Mus, KB
+    }
+
+    public enum EIa : byte {
+        A0, A1
     }
 
     public class IaPrm : IIaPrm {
@@ -19,8 +19,8 @@ namespace DT {
         private III[] _iIIArr = new III[Enum.GetNames(typeof(EII)).Length];
 
         public IaPrm() {
-            _iIIArr[(byte)EII.Mus] = new MusII((byte)EII.Mus);
-            _iIIArr[(byte)EII.KB] = new KBII((byte)EII.KB);
+            _iIIArr[(byte)EII.Mus] = new MusII();
+            _iIIArr[(byte)EII.KB] = new KBII();
             _iIaArr[(byte)EIa.A0] = new A0Ia(_iIIArr);
             _iIaArr[(byte)EIa.A1] = new A1Ia(_iIIArr);
         }

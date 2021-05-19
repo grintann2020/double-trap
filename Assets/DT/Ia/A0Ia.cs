@@ -6,7 +6,7 @@ namespace DT {
 
     public class A0Ia : Ia, IIa {
 
-        public enum EAct {
+        public enum ERct {
             R0, R1
         }
 
@@ -19,14 +19,14 @@ namespace DT {
         public A0Ia(III[] iIIPrmArr) : base(iIIPrmArr) {
             _iIIArr = new III[2] { _iIIPrmArr[(byte)EII.Mus], _iIIPrmArr[(byte)EII.KB] };
 
-            _actArr = new Action[Enum.GetNames(typeof(EAct)).Length];
-            _actArr[(byte)EAct.R0] = R0;
-            _actArr[(byte)EAct.R1] = R1;
+            _rctArr = new Action[Enum.GetNames(typeof(ERct)).Length];
+            _rctArr[(byte)ERct.R0] = R0;
+            _rctArr[(byte)ERct.R1] = R1;
 
             _evtArr = new byte[Enum.GetNames(typeof(EEvt)).Length][];
-            _evtArr[(byte)EEvt.E0] = new byte[PR] { 0, (byte)MusII.EInp.I0, (byte)EAct.R0 };
-            _evtArr[(byte)EEvt.E1] = new byte[PR] { 0, (byte)MusII.EInp.I1, (byte)EAct.R0 };
-            _evtArr[(byte)EEvt.E2] = new byte[PR] { 0, (byte)MusII.EInp.I1, (byte)EAct.R1 };
+            _evtArr[(byte)EEvt.E0] = new byte[PR] { 0, (byte)MusII.EDtc.I0, (byte)ERct.R0 };
+            _evtArr[(byte)EEvt.E1] = new byte[PR] { 0, (byte)MusII.EDtc.I1, (byte)ERct.R0 };
+            _evtArr[(byte)EEvt.E2] = new byte[PR] { 0, (byte)MusII.EDtc.I1, (byte)ERct.R1 };
         }
 
         public void R0() {

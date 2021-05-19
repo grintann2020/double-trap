@@ -4,9 +4,9 @@ using T;
 
 namespace DT {
 
-    public enum ESquDir : byte { // don't move the enum to namespace T
-        N, E, W, S, NW, NE, SW, SE,
-    }
+    // public enum ESquDir : byte { // don't move the enum to namespace T
+    //     N, E, W, S, NW, NE, SW, SE,
+    // }
 
     public class SquSS : SS, ISS {
 

@@ -6,7 +6,7 @@ namespace T {
 
         public bool IsStup { get { return _isStup; } }
         public bool IsMov { get { return _isMov; } }
-        protected Camera _cam;
+        protected Camera _cam = null;
         protected SCamPrj[] _prjArr;
         protected SOrnt3[] _orntArr;
         protected ushort[] _stpArr;
@@ -14,13 +14,9 @@ namespace T {
         protected byte[][] _movArr;
         protected SCamPrj _dflPrj;
         protected SOrnt3 _dflOrnt;
-        protected byte _eMov;
-        protected bool _isStup = false;
+        private byte _eMov;
+        private bool _isStup = false;
         private bool _isMov = false;
-
-        public Vw() {
-            _cam = null;
-        }
 
         public virtual void Stup(Camera cam) { // setup
             _isStup = true;

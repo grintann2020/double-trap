@@ -62,7 +62,7 @@ namespace DT {
         }
 
         private void BgnA() {
-            
+
             // Debug.Log("ATut0Stg -- BgnA -- aaa = " + aaa);
         }
 

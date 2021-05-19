@@ -7,10 +7,10 @@ namespace CS {
 
         public IPgmPrm IPgmPrm { get { return new PgmPrm(); } }
         public ILangPrm ILangPrm { get { return new LangPrm(); } }
-        // public IResPrm IResPrm { get { return new ResPrm(); } }
         public ISpcPrm ISpcPrm { get { return new SpcPrm(); } }
         public IVwPrm IVwPrm { get { return new VwPrm(); } }
         public IIaPrm IIaPrm { get { return new IaPrm(); } }
+        public IUIPrm IUIPrm { get {return new UIPrm();} }
 
         public void Bind() {
             Debug.Log("CS -- Prm -- Bind()");

@@ -13,20 +13,6 @@ namespace T {
             _iCurIa = null;
         }
 
-        public void InvkUpd() {
-            if (_iCurIa != null) {
-                _iCurIa.InvkUpd();
-            }
-        }
-
-        public IIa Ia(byte eIa) {
-            return _iIaArr[eIa];
-        }
-
-        public bool IsInstl(byte eIa) {
-            return _iIaArr[eIa].IsInstl;
-        }
-
         public void Instl(byte eIa) {
             if (_iCurIa != null) {
                 if (_iIaArr[eIa] == _iCurIa) {
@@ -43,6 +29,20 @@ namespace T {
                 _iCurIa.Unstl();
                 _iCurIa = null;
             }
+        }
+
+        public void InvkUpd() {
+            if (_iCurIa != null) {
+                _iCurIa.InvkUpd();
+            }
+        }
+
+        public IIa Ia(byte eIa) {
+            return _iIaArr[eIa];
+        }
+
+        public bool IsInstl(byte eIa) {
+            return _iIaArr[eIa].IsInstl;
         }
     }
 }

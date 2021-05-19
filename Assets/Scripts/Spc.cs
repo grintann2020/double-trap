@@ -15,8 +15,8 @@ namespace T {
         protected byte[][][] _curArr;
         protected IBlk[][][] _iBlkArr;
         protected ISS _iSS;
-        protected bool _isCnstr = false;
-        protected bool _isEstb = false;
+        private bool _isCnstr = false;
+        private bool _isEstb = false;
 
         public Spc(ISS iSS) {
             _iSS = iSS;

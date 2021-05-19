@@ -48,8 +48,12 @@ namespace T {
             return _iSpcArr[eSpc];
         }
 
-        public void Blk(byte eSpc, SGrid3 grid) {
-            // _iSpcArr[eSpc].Blk();
+        public bool IsCnstr(byte eSpc) {
+            return _iSpcArr[eSpc].IsCnstr;
+        }
+
+        public bool IsEstb(byte eSpc) {
+            return _iSpcArr[eSpc].IsEstb;
         }
     }
 }

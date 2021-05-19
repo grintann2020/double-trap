@@ -14,6 +14,12 @@ namespace T {
 
         }
 
+        public void InvkUpd() {
+            for (byte v = 0; v < _iVwArr.Length; v++) {
+                _iVwArr[v].InvkUpd();
+            }
+        }
+
         public void Stup(byte eVw, Camera cam) {
             _iVwArr[eVw].Stup(cam);
         }
@@ -28,12 +34,6 @@ namespace T {
 
         public void Ornt(byte eVw, byte eOrnt) {
             _iVwArr[eVw].Ornt(eOrnt);
-        }
-
-        public void InvkUpd() {
-            for (byte v = 0; v < _iVwArr.Length; v++) {
-                _iVwArr[v].InvkUpd();
-            }
         }
         
         public void Mov(byte eVw, byte eMov) {

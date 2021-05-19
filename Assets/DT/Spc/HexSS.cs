@@ -12,10 +12,6 @@ namespace DT {
 
         }
 
-        // public override byte[] TTT(byte[] bArr) {
-        //     return bArr;
-        // }
-
         public override IBlk[][][] Cnstr(byte[][][] eObjArr, SCoord3 ctr) {
             // float uWd = 1.0f;
             // float unitWidth = (HEXSCALE * uWd) / 2;

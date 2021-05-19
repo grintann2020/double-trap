@@ -4,21 +4,22 @@ namespace T {
 
     public class II {
 
-        public byte EII { get; }
         protected delegate void _dDtc(Action rct);
         protected _dDtc[] _dDtcArr;
         protected Action[] _rctArr;
-        private byte _eII;
-
-        public II(byte eII) {
-            _eII = eII;
-        }
 
         public void Instl() {
             _rctArr = new Action[_dDtcArr.Length];
-            for (byte e = 0; e < _rctArr.Length; e++) {
-                _rctArr[e] = () => {};
+            for (byte r = 0; r < _rctArr.Length; r++) {
+                _rctArr[r] = () => {};
             }
+        }
+
+        public void Unstl() {
+            for (byte r = 0; r < _rctArr.Length; r++) {
+                _rctArr[r] = null;
+            }
+            _rctArr = new Action[0];
         }
 
         public void Invk(byte eEvt, Action rct) {
