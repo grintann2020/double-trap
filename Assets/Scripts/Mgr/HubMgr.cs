@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace T {
 
     public class HubMgr : Sgltn<HubMgr> {
@@ -37,8 +39,28 @@ namespace T {
             }
         }
 
+        public IHub Hub() {
+            return _iCurHub;
+        }
+
         public IHub Hub(byte eHub) {
             return _iHubArr[eHub];
+        }
+
+        public void St(byte eGO, GameObject go) {
+            _iCurHub.St(eGO, go);
+        }
+
+        public void St(byte eHub, byte eGO, GameObject go) {
+            _iHubArr[eHub].St(eGO, go);
+        }
+
+        public GameObject Gt(byte eGO) {
+            return _iCurHub.Gt(eGO);
+        }
+
+        public GameObject Gt(byte eHub, byte eGO) {
+            return _iHubArr[eHub].Gt(eGO);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace DT {
         public IIaPrm IIaPrm { get { return new IaPrm(); } }
         public IStgPrm IStgPrm { get { return new StgPrm(); } }
         public IUIPrm IUIPrm { get { return new UIPrm(); } }
+        public IHubPrm IHubPrm { get { return new HubPrm(); } }
 
         public void Bind() {
             // Debug.Log("DT -- Prm -- Bind()");
@@ -24,6 +25,7 @@ namespace DT {
             SpcMgr.Ins.Bind(ISpcPrm);
             StgMgr.Ins.Bind(IStgPrm);
             UIMgr.Ins.Bind(IUIPrm);
+            HubMgr.Ins.Bind(IHubPrm);
         }
     } 
 }

@@ -3,7 +3,7 @@ using T;
 
 namespace DT {
 
-    public enum ESS : byte {
+    public enum ESS : byte {  
         Squ, Hex
     }
 
@@ -16,15 +16,13 @@ namespace DT {
         public ISpc[] ISpcArr { get { return _iSpcArr; } }
         private ISpc[] _iSpcArr = new ISpc[Enum.GetNames(typeof(ESpc)).Length];
         private ISS[] _iSSArr = new ISS[Enum.GetNames(typeof(ESS)).Length];
-        private ISS _iSquSS;
-        private ISS _iHexSS;
 
         public SpcPrm() {
             _iSSArr[(byte)ESS.Squ] = new SquSS(1, 1);
             _iSSArr[(byte)ESS.Hex] = new HexSS(1, 2); // For Test
-            _iSpcArr[(byte)ESpc.A0] = new A0Spc(_iSquSS);
-            _iSpcArr[(byte)ESpc.A1] = new A1Spc(_iSquSS);
-            _iSpcArr[(byte)ESpc.B0] = new B0Spc(_iHexSS);
+            _iSpcArr[(byte)ESpc.A0] = new A0Spc(_iSSArr[(byte)ESS.Squ]);
+            _iSpcArr[(byte)ESpc.A1] = new A1Spc(_iSSArr[(byte)ESS.Squ]);
+            _iSpcArr[(byte)ESpc.B0] = new B0Spc(_iSSArr[(byte)ESS.Hex]);
         }
     }
 }

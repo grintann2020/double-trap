@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace T {
 
     public interface IHub {
@@ -6,5 +8,7 @@ namespace T {
         void Conn();
         void Dscn();
         void InvkUpd();
+        void St(byte eGO, GameObject go);
+        GameObject Gt(byte eGO);
     }
 }

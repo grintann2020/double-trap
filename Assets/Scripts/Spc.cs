@@ -22,9 +22,9 @@ namespace T {
             _iSS = iSS;
         }
 
-        public void Cnstr(SCoord3 ctr) {
+        public void Cnstr(SCoord3 sCtr) {
             _isCnstr = true;
-            _iBlkArr = _iSS.Cnstr(_curArr, ctr);
+            _iBlkArr = _iSS.Cnstr(_curArr, sCtr);
         }
 
         public void Dcstr() {
