@@ -22,7 +22,7 @@ namespace T {
                 }
                 _iCurHub.Dscn();
             }
-            _iCurHub = _iHubArr[eHub];
+            _iCurHub = _iHubArr[eHub]; 
             _iCurHub.Conn();
         }
 
@@ -53,6 +53,14 @@ namespace T {
 
         public void Act(byte eHub, byte eAct) {
             _iHubArr[eHub].Act(eAct);
+        }
+
+        public void Mot(byte eAct) {
+            _iCurHub.Mot(eAct);
+        }
+
+        public void Mot(byte eHub, byte eAct) {
+            _iHubArr[eHub].Mot(eAct);
         }
 
         public void StGO(byte eGO, GameObject go) {
